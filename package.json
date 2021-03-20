@@ -1,0 +1,47 @@
+{
+    "name": "impact",
+    "version": "1.0.0",
+    "description": "Ghost blogging theme",
+    "engines": {
+        "ghost": ">=4.0.0",
+        "ghost-api": "v4"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Eduardo Chiaro",
+        "email": "e.chiaro@gmail.com",
+        "url": "https://www.eduardochiaro.com"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "devDependencies": {
+        "@tryghost/release-utils": "^0.6.12",
+        "autoprefixer": "^10.2.5",
+        "beeper": "^2.1.0",
+        "cssnano": "^4.1.10",
+        "gscan": "^4.0.1",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-livereload": "^4.0.2",
+        "gulp-postcss": "^9.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-zip": "^5.1.0",
+        "node-sass": "^5.0.0",
+        "postcss": "^8.2.8",
+        "pump": "^3.0.0"
+    }
+}

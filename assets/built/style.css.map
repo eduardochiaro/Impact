@@ -1,0 +1,1 @@
+{"version":3,"sources":["screen.scss"],"names":[],"mappings":"AAAA,KACC,cAAe,CADhB,cAGE,SAAU","file":"style.css","sourcesContent":["body {\n\tfont-size: 20px;\n\t.content {\n\t\tcolor: red;\n\t}\n}"]}
