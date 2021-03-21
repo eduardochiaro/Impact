@@ -1,0 +1,21 @@
+@mixin transparent-background($background: #333333, $opacity: 0.6) {
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: "";
+		background: $background;
+		opacity: $opacity;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		z-index: -1;   
+	}
+}
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}

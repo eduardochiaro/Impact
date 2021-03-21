@@ -11,6 +11,7 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const beeper = require('beeper');
 const uglify = require('gulp-uglify');
+const nodemon = require('gulp-nodemon');
 
 // postcss plugins
 const autoprefixer = require('autoprefixer');
@@ -41,7 +42,7 @@ function css(done) {
 	pump([
 			src('assets/scss/*.scss', {sourcemaps: true}),
 			sass().on('error', sass.logError),
-			concat('style.css'),
+			concat('screen.css'),
 			postcss([
 					//easyimport,
 					//colorFunction(),
@@ -67,9 +68,18 @@ function js(done) {
 	], handleError(done));
 }
 
+function design(done) {
+	nodemon({
+		script: 'design.js',
+		ext: 'js html'
+	})
+}
+
 const cssWatcher = () => watch('assets/scss/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+const designWatcher = () => watch('assets/scss/**', design);
 const watcher = parallel(cssWatcher, hbsWatcher);
 const build = series(css, js);
 
 exports.default = series(build, serve, watcher);
+exports.design = series(build , serve, parallel(cssWatcher, hbsWatcher, design) );

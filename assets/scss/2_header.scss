@@ -1,0 +1,198 @@
+@import "./components/variables.scss";
+@import "./components/mixins.scss";
+
+/* Site Header
+/* ---------------------------------------------------------- */
+
+.site-header-content {
+	position: relative;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 6vw 3vw;
+	min-height: 200px;
+	max-height: 340px;
+	text-align: center;
+	padding: 12vmin 4vmin 24vmin;
+	font-size: 2.5rem;
+	font-weight: 400;
+	color: #fff;
+	background: var(--ghost-accent-color);
+
+	.site-header-cover {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.site-title {
+		z-index: 10;
+		margin: 0 0 0.15em;
+		padding: 0;
+		.site-logo {
+			max-height: 55px;
+		}
+	} 
+	p {
+		z-index: 10;
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 1.2em;
+		opacity: 0.8;
+		@media (max-width: 600px) {
+			max-width: 80vmin;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+/* Site Navigation
+/* ---------------------------------------------------------- */
+
+.header {
+	padding: 1vmin 4vmin;
+	font-size: 1.6rem;
+	line-height: 1.3em;
+	color: #fff;
+	background: var(--ghost-accent-color);
+	a {
+		color: inherit;
+		text-decoration: none;
+	}	
+	.header-inner {
+		display: grid;
+		grid-gap: 2.5vmin;
+		grid-template-columns: auto auto 1fr;
+		grid-auto-flow: row dense;
+	}
+}
+
+/* Brand
+/* ---------------------------------------------------------- */
+
+.header-brand {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	max-width: 200px;
+	text-align: center;
+	word-break: break-all;
+	.header-logo {
+		display: block;
+		padding: 10px 0;
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 1.2em;
+		letter-spacing: -0.02em;
+		img {
+			max-height: 26px;
+		}
+	}
+}
+
+/* Primary Navigation
+/* ---------------------------------------------------------- */
+
+.header-menu {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	.nav {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			margin: 0 2.5vmin 0 0;
+			padding: 0;
+		}
+		a {
+			display: inline-block;
+			padding: 5px 0;
+			opacity: 0.8;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		
+	}	
+}
+
+/* Secondary Navigation
+/* ---------------------------------------------------------- */
+
+.header-actions {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	list-style: none;
+	text-align: right;
+
+	.social {
+		margin: 0 1.5vmin 0 0;
+		a {
+			opacity: 0.8;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		a + a {
+			margin-left: 0.8rem;
+		}
+		svg {
+			height: 22px;
+			width: 22px;
+			fill: #fff;
+		}
+		.social-facebook svg {
+			height: 20px;
+			width: 20px;
+		}
+	}
+
+	a.header-button {
+		display: block;
+		padding: 8px 15px;
+		color: var(--color-darkgrey);
+		font-weight: 500;
+		letter-spacing: -0.015em;
+		font-size: 1.5rem;
+		line-height: 1em;
+		background: #fff;
+		border-radius: 30px;
+	}
+}
+
+
+/* Homepage
+/* ---------------------------------------------------------- */
+.home-template {
+	.header {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 2000;
+		&.has-cover {
+			//@include transparent-background(var(--ghost-accent-color), 0.3);
+			background-color: transparent;
+			color: var(--darkgrey);
+		}
+		.header-logo {
+			display: none;
+		}
+	}
+	&.header-open {
+		.header {
+			background: var(--ghost-accent-color);
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{{!< default}}
+
+<div class="site-header-content">
+	<img class="site-header-cover"
+			srcset="./designs/images/header-background.jpg 300w,
+							./designs/images/header-background.jpg 600w,
+							./designs/images/header-background.jpg 1000w,
+							./designs/images/header-background.jpg 2000w"
+			sizes="100vw"
+			src="./designs/images/header-background.jpg"
+			alt=""
+	/>
+	<h1 class="site-title">
+			<img class="site-logo" src="./designs/images/logo.png" alt="Impact - Ghost blogging theme" />
+	</h1>
+	<p>Site description</p>
+</div>
+
+<!-- The main content area -->
+<main id="site-main" class="site-main outer">
+	<div class="inner posts">
+
+		<div class="post-feed">
+			{{> "post-card-featured"}}
+			{{> "post-card"}}
+			{{> "post-card"}}
+			{{> "post-card"}}
+		</div>
+	</div>
+</main>

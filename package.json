@@ -14,7 +14,8 @@
     },
     "scripts": {
         "dev": "gulp",
-        "zip": "gulp zip"
+        "zip": "gulp zip",
+        "design": "gulp design"
     },
     "gpm": {
         "type": "theme",
@@ -31,16 +32,23 @@
         "@tryghost/release-utils": "^0.6.12",
         "autoprefixer": "^10.2.5",
         "beeper": "^2.1.0",
+        "connect-livereload": "^0.6.1",
         "cssnano": "^4.1.10",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.1",
         "gscan": "^4.0.1",
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1",
         "gulp-livereload": "^4.0.2",
+        "gulp-nodemon": "^2.5.0",
         "gulp-postcss": "^9.0.0",
         "gulp-sass": "^4.1.0",
         "gulp-uglify": "^3.0.2",
         "gulp-zip": "^5.1.0",
+        "handlebars": "^4.7.7",
+        "livereload": "^0.9.3",
         "node-sass": "^5.0.0",
+        "open": "^8.0.3",
         "postcss": "^8.2.8",
         "pump": "^3.0.0"
     }
