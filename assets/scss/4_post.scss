@@ -1,0 +1,103 @@
+@import "./components/variables.scss";
+@import "./components/mixins.scss";
+
+.article {
+	background-color: white;
+	margin: -3vmin 0;
+	padding: 4vmin;
+	z-index: 100;
+	@include rounded(0.7vmin);
+	@include box-shadow(0, 0, 40px, rgba(var(--darkgrey--rgb), 0.15) );
+	.content {
+	}
+}
+
+
+/* 7.3. Subscribe
+/* ---------------------------------------------------------- */
+
+.footer-cta {
+	position: relative;
+	padding: 9vmin 4vmin 10vmin;
+	color: #fff;
+	text-align: center;
+	background: var(--darkgrey);
+	h2 {
+		margin: 0 0 30px;
+		font-size: 3.2rem;
+		@media (max-width: 600px) {
+			font-size: 2.65rem;
+		}
+	}
+	
+	.footer-cta-button {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 500px;
+		padding: 5px 5px 5px 15px;
+		font-size: 1.8rem;
+		color: var(--midgrey);
+		background: #fff;
+		border-radius: 8px;
+		span {
+			display: inline-block;
+			padding: 10px 20px;
+			color: #fff;
+			font-weight: 500;
+			background: var(--ghost-accent-color);
+			border-radius: 5px;
+		}
+	}
+}
+
+/* 7.4. Read more
+/* ---------------------------------------------------------- */
+
+.read-more-wrap {
+	width: 100%;
+	padding: 4vmin;
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	background: color-mod(var(--darkgrey) l(-5%));
+	.read-more {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 4vmin;
+		@media (max-width: 1000px) {
+			grid-template-columns: 1fr 1fr;
+			.read-more article:nth-child(3) {
+				display: none;
+			}
+		}
+		@media (max-width: 700px) {
+			grid-template-columns: 1fr;
+			.read-more article:nth-child(2) {
+				display: none;
+			}
+		}
+		.post-card {
+			position: relative;
+			flex: 1 1 301px;
+			display: flex;
+			flex-direction: column;
+			min-height: 220px;
+			background-size: cover;
+			.post-card-title {
+				color: #fff;
+				opacity: 0.8;
+				margin-top: 0.5rem;
+			}
+			.post-card-excerpt {
+				color: rgba(255, 255, 255, 0.6);
+			}
+			.post-card-byline-content a {
+				color: #fff;
+			}
+			
+		}
+	} 
+	
+}

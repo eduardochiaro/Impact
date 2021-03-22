@@ -50,6 +50,7 @@
         "node-sass": "^5.0.0",
         "open": "^8.0.3",
         "postcss": "^8.2.8",
+        "postcss-color-mod-function": "^3.0.3",
         "pump": "^3.0.0"
     }
 }

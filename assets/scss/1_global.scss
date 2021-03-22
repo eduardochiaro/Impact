@@ -198,3 +198,32 @@ h6 {
 	max-width: 1200px;
 	width: 100%;
 }
+
+
+/* Content grid
+/* ---------------------------------------------------------- */
+
+/* Canvas creates a multi-column, centered grid which the post
+is laid out on top of. Canvas just defines the grid, we don't
+use it for applying any other styles. */
+
+.canvas {
+	display: grid;
+	grid-template-columns:
+			[full-start]
+			minmax(4vmin, auto)
+					[wide-start]
+					minmax(auto, 240px)
+							[main-start]
+									Min(1200px, calc(100% - 8vw))
+							[main-end]
+					minmax(auto, 240px)
+					[wide-end]
+			minmax(4vmin, auto)
+			[full-end]
+	;
+}
+
+.canvas > * {
+	grid-column: main-start / main-end;
+}

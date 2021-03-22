@@ -25,8 +25,8 @@
 		background: white;
 		z-index: 101;
 		padding: 1vmin;
-		@include rounded(1vmin);
-		@include box-shadow(0, 0, 40px, rgba(var(--darkgrey--rgb), 0.15) );
+		@include rounded(0.7vmin);
+		@include box-shadow(0, 0, 40px, rgba(var(---darkgrey--rgb), 0.15) );
 		overflow: auto;
 
 		.post-card-image-link {
@@ -79,7 +79,7 @@
 				min-height: 280px;
 				border-top: 0;
 				padding: 2vmin;
-				margin-top: -24vmin;
+				margin-top: -10vmin;
 				&:not(.no-image) .post-card-header {
 					margin-top: 0;
 				}
@@ -120,6 +120,6 @@
 			.post-card-excerpt {
 					font-size: 1.6rem;
 			}
-	}
+		}
 	}
 }

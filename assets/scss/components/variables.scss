@@ -1,7 +1,6 @@
 @function hexToRGB($hex) {
   @return red($hex), green($hex), blue($hex);
 }
-
 $darkgrey: #15171A;
 :root {
 	/* Colours */
@@ -10,7 +9,7 @@ $darkgrey: #15171A;
 	--purple: #ad26b4;
 	--yellow: #fecd35;
 	--red: #f05230;
-	--darkgrey: #{$darkgrey};
+	--darkgrey: #15171A;
 	--midgrey: #738a94;
 	--lightgrey: #c5d2d9;
 	--whitegrey: #e5eff5;
@@ -29,7 +28,7 @@ $darkgrey: #15171A;
 	--montserrat-font: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
 	--darkmode: color-mod(var(--darkgrey) l(+2%));
 
-	--ghost-accent-color: var(---black-coral);
+	--ghost-accent-color: #696d7dff;
 
   --darkgrey--rgb: #{hexToRGB($darkgrey)};
 }

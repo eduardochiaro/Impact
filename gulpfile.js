@@ -16,6 +16,7 @@ const nodemon = require('gulp-nodemon');
 // postcss plugins
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const colorFunction = require('postcss-color-mod-function');
 
 function serve(done) {
 	livereload.listen();
@@ -45,7 +46,7 @@ function css(done) {
 			concat('screen.css'),
 			postcss([
 					//easyimport,
-					//colorFunction(),
+					colorFunction(),
 					autoprefixer(),
 					cssnano()
 			]),

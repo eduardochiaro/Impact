@@ -56,7 +56,7 @@
 /* ---------------------------------------------------------- */
 
 .header {
-	padding: 1vmin 4vmin;
+	padding: 1vmin 4vmin 4vmin;
 	font-size: 1.6rem;
 	line-height: 1.3em;
 	color: #fff;
@@ -161,13 +161,13 @@
 	a.header-button {
 		display: block;
 		padding: 8px 15px;
-		color: var(--color-darkgrey);
+		color: var(--darkgrey);
 		font-weight: 500;
 		letter-spacing: -0.015em;
 		font-size: 1.5rem;
 		line-height: 1em;
 		background: #fff;
-		border-radius: 30px;
+		@include rounded(0.7vmin);
 	}
 }
 
@@ -193,6 +193,83 @@
 	&.header-open {
 		.header {
 			background: var(--ghost-accent-color);
+		}
+	}
+}
+
+
+
+/* Site Footer
+/* ---------------------------------------------------------- */
+
+.site-footer {
+	position: relative;
+	padding: 5vmin 4vmin 8vmin;
+	color: #fff;
+	background: color-mod(var(--darkgrey) l(-5%));
+	color: rgba(255,255,255,0.7);
+	.inner {
+		display: grid;
+		grid-gap: 40px;
+		grid-template-columns: auto 1fr auto;
+		color: rgba(255,255,255,0.7);
+		font-size: 1.3rem;
+
+		@media (max-width: 800px) {
+			max-width: 500px;
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+			text-align: center;
+		}
+	}
+	.copyright {
+		a {
+			color: #fff;
+			letter-spacing: -0.015em;
+			font-weight: 500;
+			@media (max-width: 800px) {
+				color: #fff;
+				font-size: 1.5rem;
+			}
+		}
+	}
+	a {
+		color: rgba(255,255,255,0.7);
+		&:hover {
+			color: rgba(255,255,255,1);
+			text-decoration: none;
+		}
+	}
+	.site-footer-nav {
+		ul {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin: 0 0 20px;
+			padding: 0;
+			list-style: none;
+			li {
+				display: inline-flex;
+				align-items: center;
+				padding: 0;
+				margin: 0;
+				line-height: 2em;
+				&:not(:first-child) a:before {
+					content: "";
+					display: block;
+					width: 2px;
+					height: 2px;
+					margin: 0 10px 0 0;
+					background: #fff;
+					border-radius: 100%;
+				}
+			}
+		}
+		a {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			margin-left: 10px;
 		}
 	}
 }

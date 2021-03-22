@@ -7,19 +7,23 @@
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="stylesheet" type="text/css" href="./built/screen.css" />
+		<link rel="stylesheet" type="text/css" href="/built/screen.css" />
 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet" />
 	</head>
 
-	<body class="home-template">
+	<body class="{{ body_class }}">
 		<div class="viewport">
 
 			<header id="header" class="header has-cover">
 				<nav class="header-inner inner">
 					<div class="header-brand">
 						<a class="header-logo" href="#">
-							<img src="./images/logo.png" alt="Impact - Ghost blogging theme" />
+        		{{#if site.logo}}
+							<img src="{{site.logo}}" alt="Impact - Ghost blogging theme" />        
+						{{else}}
+							{{site.title}}
+						{{/if}}
 						</a>
 						<a class="burger" role="button">
 							<div class="burger-box">
@@ -42,9 +46,8 @@
 					</div>
 					<div class="header-actions">
 						<div class="social">
-							<a class="social-facebook" href="#" title="Facebook" target="_blank" rel="noopener"><svg></svg></a>
-
-							<a class="social-twitter" href="#" title="Twitter" target="_blank" rel="noopener"><svg></svg></a>
+							<a class="social-facebook" href="#" title="Facebook" target="_blank" rel="noopener">{{> icons/facebook}}</a>
+							<a class="social-twitter" href="#" title="Twitter" target="_blank" rel="noopener">{{> icons/twitter}}</a>
 						</div>
 						<a class="header-button" href="#/portal">Subscribe</a>
 					</div>
@@ -54,6 +57,20 @@
 			<main>
         {{{body}}}
 			</main>
+
+
+			{{!-- The global footer at the very bottom of the screen --}}
+			<footer class="site-footer outer">
+					<div class="inner">
+							<section class="copyright"><a href="#">Impact</a> &copy; 2021</section>
+							<nav class="site-footer-nav">
+                <a href="#">Privacy Policy</a>
+        				<a href="#">Terms of Service</a>
+							</nav>
+							<div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+					</div>
+			</footer>
+
 		</div>
 	</body>
 </html>
