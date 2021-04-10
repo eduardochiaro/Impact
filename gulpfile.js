@@ -1,86 +1,49 @@
-const {series, watch, src, dest, parallel} = require('gulp');
-const pump = require('pump');
-
-// gulp plugins and utils
-const livereload = require('gulp-livereload');
-const postcss = require('gulp-postcss');
-const zip = require('gulp-zip');
-const concat = require('gulp-concat');
-const fs = require('fs');
+const gulp = require('gulp');
 const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
-const beeper = require('beeper');
-const uglify = require('gulp-uglify');
-const nodemon = require('gulp-nodemon');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');    
+const browserSync = require('browser-sync').create();
 
-// postcss plugins
+var postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const colorFunction = require('postcss-color-mod-function');
 
-function serve(done) {
-	livereload.listen();
-	done();
+//compile scss into css
+function css() {
+  return gulp.src('./assets/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+		.pipe(concat('main.css'))
+    .pipe(gulp.dest('./assets/built'))
+		.pipe(postcss([
+			autoprefixer(),
+			cssnano()
+		]))
+    .pipe(browserSync.stream());
 }
 
-const handleError = (done) => {
-	return function (err) {
-			if (err) {
-					beeper();
-			}
-			return done(err);
-	};
-};
-
-function hbs(done) {
-	pump([
-			src(['*.hbs', 'partials/**/*.hbs']),
-			livereload()
-	], handleError(done));
+//compile jss into one file
+function js() {
+  return gulp.src('./assets/js/*.js')
+		.pipe(concat('main.js'))
+		.pipe(uglify())
+    .pipe(gulp.dest('./assets/built'))
+    .pipe(browserSync.stream());
 }
 
-function css(done) {
-	pump([
-			src('assets/scss/*.scss', {sourcemaps: true}),
-			sass().on('error', sass.logError),
-			concat('screen.css'),
-			postcss([
-					//easyimport,
-					colorFunction(),
-					autoprefixer(),
-					cssnano()
-			]),
-			dest('assets/built/', {sourcemaps: '.'}),
-			livereload()
-	], handleError(done));
+function watcher() {
+	browserSync.init({
+		server: {
+			baseDir: "./designs",
+			routes : {
+					'/assets' : './assets'
+			},
+			index: "/index.html"
+		}
+	});
+	gulp.watch('./assets/scss/**/*.scss', css)
+	gulp.watch('./assets/js/**/*.js', js);
+	gulp.watch('./designs/*.html').on('change', browserSync.reload);
 }
 
-function js(done) {
-	pump([
-			src([
-					// pull in lib files first so our own code can depend on it
-					'assets/js/lib/*.js',
-					'assets/js/*.js'
-			], {sourcemaps: true}),
-			concat('theme.js'),
-			uglify(),
-			dest('assets/built/', {sourcemaps: '.'}),
-			livereload()
-	], handleError(done));
-}
-
-function design(done) {
-	nodemon({
-		script: 'design.js',
-		ext: 'js html'
-	})
-}
-
-const cssWatcher = () => watch('assets/scss/**', css);
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const designWatcher = () => watch('assets/scss/**', design);
-const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
-
-exports.default = series(build, serve, watcher);
-exports.design = series(build , serve, parallel(cssWatcher, hbsWatcher, design) );
+exports.style = css;
+exports.watch = gulp.series(css, js, watcher);

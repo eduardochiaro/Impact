@@ -1,5 +1,6 @@
 @import "./components/variables.scss";
 @import "./components/mixins.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 html {
 	font-size: 62.5%;
@@ -7,15 +8,15 @@ html {
 }
 
 body {
-	color: var(--darkgrey);
-	font-family: var(--system-font);
-	font-size: 1.6rem;
-	line-height: 1.6em;
+	color: $darkgrey;
+	font-family: $system-font;
+	font-size: 18px;
 	font-weight: 400;
+	line-height: 2.5rem;
 	font-style: normal;
 	letter-spacing: 0;
 	text-rendering: optimizeLegibility;
-	background: var(--platinum);
+	background: $platinum;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -23,207 +24,9 @@ body {
 }
 
 h1 {
-	font-family: var(--montserrat-font);
-}
-
-::not(.gh-content) p,
-::not(.gh-content) ul,
-::not(.gh-content) ol,
-::not(.gh-content) dl,
-::not(.gh-content) blockquote {
-	margin: 0 0 1.5em 0;
-}
-
-ol,
-ul {
-	padding-left: 1.3em;
-	padding-right: 1.5em;
-}
-
-ol ol,
-ul ul,
-ul ol,
-ol ul {
-	margin: 0.5em 0 1em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-ul,
-ol {
-	max-width: 100%;
-}
-
-li {
-	margin: 0.5em 0;
-	padding-left: 0.3em;
-	line-height: 1.6em;
-}
-
-dt {
-	float: left;
-	margin: 0 20px 0 0;
-	width: 120px;
-	color: #daf2fd;
-	font-weight: 500;
-	text-align: right;
-}
-
-dd {
-	margin: 0 0 5px 0;
-	text-align: left;
-}
-
-blockquote {
-	margin: 1.5em 0;
-	padding: 0 1.6em 0 1.6em;
-	border-left: #daf2fd;
-}
-
-blockquote p {
-	margin: 0.8em 0;
-	font-size: 1.2em;
-	font-weight: 300;
-}
-
-blockquote small {
-	display: inline-block;
-	margin: 0.8em 0 0.8em 1.5em;
-	font-size: 0.9em;
-	opacity: 0.8;
-}
-/* Quotation marks */
-blockquote small:before {
-	content: "\2014 \00A0";
-}
-
-blockquote cite {
-	font-weight: bold;
-}
-blockquote cite a {
-	font-weight: normal;
-}
-
-a {
-	color: #15171A;
-	text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-top: 0;
-	line-height: 1.15;
-	font-weight: 600;
-	text-rendering: optimizeLegibility;
-	letter-spacing: -0.01em;
-}
-
-h1 {
-	margin: 0 0 0.5em 0;
-	font-size: 4.8rem;
+	font-family: $header-font;
+	text-transform: uppercase;
 	font-weight: 700;
-	letter-spacing: -0.015em;
-}
-@media (max-width: 600px) {
-	h1 {
-		font-size: 2.8rem;
-	}
-}
-
-h2 {
-	margin: 1.5em 0 0.5em 0;
-	font-size: 2.8rem;
-	font-weight: 700;
-}
-@media (max-width: 600px) {
-	h2 {
-		font-size: 2.3rem;
-	}
-}
-
-h3 {
-	margin: 1.5em 0 0.5em 0;
-	font-size: 2.4rem;
-	font-weight: 600;
-}
-@media (max-width: 600px) {
-	h3 {
-		font-size: 1.7rem;
-	}
-}
-
-h4 {
-	margin: 1.5em 0 0.5em 0;
-	font-size: 2.2rem;
-}
-
-h5 {
-	margin: 1.5em 0 0.5em 0;
-	font-size: 2rem;
-}
-
-h6 {
-	margin: 1.5em 0 0.5em 0;
-	font-size: 1.8rem;
-}
-
-/* Layout - Page building blocks
-/* ---------------------------------------------------------- */
-
-.viewport {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-/* Full width page blocks */
-.outer {
-	position: relative;
-	padding: 0 4vmin;
-}
-
-/* Centered content container blocks */
-.inner {
-	margin: 0 auto;
-	max-width: 1200px;
-	width: 100%;
-}
-
-
-/* Content grid
-/* ---------------------------------------------------------- */
-
-/* Canvas creates a multi-column, centered grid which the post
-is laid out on top of. Canvas just defines the grid, we don't
-use it for applying any other styles. */
-
-.canvas {
-	display: grid;
-	grid-template-columns:
-			[full-start]
-			minmax(4vmin, auto)
-					[wide-start]
-					minmax(auto, 240px)
-							[main-start]
-									Min(1200px, calc(100% - 8vw))
-							[main-end]
-					minmax(auto, 240px)
-					[wide-end]
-			minmax(4vmin, auto)
-			[full-end]
-	;
-}
-
-.canvas > * {
-	grid-column: main-start / main-end;
+	letter-spacing: 0.5rem;
+	font-size: 6rem;
 }
