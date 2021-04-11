@@ -4,14 +4,14 @@
 	border-bottom: 1px solid $lightgrey;
 	.navbar-brand {
 		font-family: $header-font;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
 		font-weight: 700;
-		font-size: 1.6rem;
+		font-size: 1.1rem;
 	}
 	.nav-item {
 		font-family: $header-font;
-		font-size: 1.2rem;
-    letter-spacing: 0.5rem;
+		font-size: 0.8rem;
+    letter-spacing: 0.2rem;
 		text-transform: uppercase;
 		.nav-link {
 			padding-top: 0;
@@ -64,10 +64,32 @@
 			-o-object-fit: cover;
 			object-fit: cover;
 		}
+		p {
+			font-size: 1.4rem;
+		}
 	}
 	.container {
     opacity: 1;
     transform: translateZ(0);
 		z-index: 2;
+	}
+}
+#footer {
+	background-color: $darkgrey;
+	color: $white;
+	font-size: 0.9rem;
+	font-family: $header-font;
+	a {
+		color: $white;
+	}
+	padding: 40px 0 100px;
+	.copyright, .powered {
+		display: inline-block;
+		a {
+			font-weight: 700;
+		}
+	}
+	.copyright {
+		border-right: 1px solid $lightgrey;
 	}
 }

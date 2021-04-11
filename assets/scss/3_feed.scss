@@ -1,0 +1,104 @@
+@import "./components/variables.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+#feed,
+#featured {
+	&.card-columns {
+		@include media-breakpoint-down(md) {
+			column-count: 1;
+		}
+		@include media-breakpoint-only(lg) {
+			column-count: 2;
+		}
+		@include media-breakpoint-up(xl) {
+			column-count: 3;
+		}
+	}
+	.card {
+		overflow: auto;
+		border-radius: 0.5rem;
+		transition: all .2s ease-in-out;
+		&:hover {
+			box-shadow: 0 18px 32px -18px #000;
+			-webkit-transform: translateY(-0.5rem);
+			transform: translateY(-0.5rem);
+		}
+		.card-image-top {
+			width: 100%;
+			object-fit: cover;
+		}
+		.card-text {
+			font-size: 1rem;
+		}
+		a {
+			color: $darkgrey;
+			&:hover {
+				text-decoration: none;
+				color: $darkgrey;
+			}
+		}
+		.card-author {
+			width: 25px;
+			height: 25px;
+			div {
+				width: 100%;
+				height: 100%;
+				background-color: $white;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				background-size: cover;
+				border: 2px solid $green-sheen;
+				border-radius: 50%;
+			}
+		}
+		.card-footer {
+			span {
+				border-right: 1px solid #c5d2d9;
+			}
+		}
+		.card-tag {
+			font-family: $header-font;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+			position: absolute;
+			right: 1rem;
+			top: 1rem;
+		}
+		&.no-picture {
+			.card-image-container {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
+
+#featured {
+	.card {
+		.card-image-link {
+			position: relative;
+			min-height: 390px;
+		}
+		.card-image-top {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.card-footer {
+			background: none;
+			border: none;
+			.card-author {
+				width: 45px;
+				height: 45px;
+				div {
+					border-width: 3px;	
+				}
+			}
+		}
+	}
+}
+
+#pagination { 
+	text-align: center;
+}

@@ -7,17 +7,19 @@ const browserSync = require('browser-sync').create();
 var postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const size = require('gulp-filesize');
 
 //compile scss into css
 function css() {
   return gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(concat('main.css'))
-    .pipe(gulp.dest('./assets/built'))
 		.pipe(postcss([
 			autoprefixer(),
 			cssnano()
 		]))
+    .pipe(gulp.dest('./assets/built'))
+		.pipe(size()) 
     .pipe(browserSync.stream());
 }
 
@@ -27,6 +29,7 @@ function js() {
 		.pipe(concat('main.js'))
 		.pipe(uglify())
     .pipe(gulp.dest('./assets/built'))
+		.pipe(size()) 
     .pipe(browserSync.stream());
 }
 

@@ -23,7 +23,7 @@ $black-coral: #696d7dff;
 $system-font: -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
 $header-font: 'Raleway', -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
 
-$ghost-accent-color: #696d7dff;
+$ghost-accent-color: $black-coral;
 
 $colors: (
   "blue": $blue,
@@ -36,7 +36,8 @@ $colors: (
 );
 
 $theme-colors: ( 
-	"primary": $ghost-accent-color 
+	"primary": $ghost-accent-color,
+	"secondary": $green-sheen 
 );
 
 $link-color: $ghost-accent-color;
