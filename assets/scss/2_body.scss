@@ -1,4 +1,26 @@
 @import "./components/variables.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+#navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	padding: 1rem 6rem;
+
+	@include media-breakpoint-down(md) {
+		padding: 1rem 1rem;
+	}
+	@include media-breakpoint-only(lg) {
+		padding: 1rem 3rem;
+	}
+	@include media-breakpoint-up(xl) {
+		padding: 1rem 6rem;
+	}
+}
 #header {
 	background-color: $white;
 	border-bottom: 1px solid $lightgrey;
@@ -21,6 +43,9 @@
 			padding-left: 2rem;
 			padding-right: 2rem;
 			border-right: 1px solid $lightgrey;
+			@include media-breakpoint-down(md) {
+				border: none;
+			}
 		}
 		&:last-child {
 			.nav-link {
@@ -31,14 +56,21 @@
 	#navbarIcons {
 		.icon {
 			margin-top: 5px;
-			width: 20px;
-			height: 20px;
+			width: 25px;
+			height: 25px;
 			svg {
 				vertical-align: top;
-				fill: $ghost-accent-color;
+				fill: var(--ghost-accent-color);
 				&:hover {
-					fill: darken($ghost-accent-color, 15%);
+					filter: brightness(0.8);
 				}
+			}
+		}
+		.btn {
+			background-color: var(--ghost-accent-color);
+			border-color: var(--ghost-accent-color);
+			&:hover {
+				filter: brightness(0.8);
 			}
 		}
 	}

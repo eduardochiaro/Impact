@@ -1,0 +1,42 @@
+{{!< default}}
+
+{{#if @site.cover_image}}
+<div id="hero" class="jumbotron jumbotron-fluid">
+	<div class="hero-image">
+		<img class="site-header-cover"
+				srcset="{{img_url @site.cover_image size="s"}} 300w,
+								{{img_url @site.cover_image size="m"}} 600w,
+								{{img_url @site.cover_image size="l"}} 1000w,
+								{{img_url @site.cover_image size="xl"}} 2000w"
+				sizes="100vw"
+				src="{{img_url @site.cover_image size="xl"}}"
+				alt=""
+		/>
+	</div>
+	<div class="container text-center position-relative my-5">
+		<h1 class="pt-5">{{@site.title}}</h1>
+		<p class="d-block">{{@site.description}}</p>
+	</div>
+</div>
+{{/if}}
+
+<div class="container pb-4">
+
+	{{#get "posts" include="tags,authors" filter="featured:true" limit="1" as |featured|}}
+		{{#if featured}}
+		<div id="featured" class="pt-2">
+			{{#foreach featured}}
+				{{> "post-card-featured"}}
+			{{/foreach}}
+		</div>
+		{{/if}}
+	
+		<div id="feed" class="post-feed card-columns pt-3">
+		{{#get "posts" include="tags,authors" limit=@config.posts_per_page as |main|}}
+			{{#foreach main}}
+				{{> "post-card"}}
+			{{/foreach}}
+		{{/get}}
+	{{/get}}
+	</div>
+</div>

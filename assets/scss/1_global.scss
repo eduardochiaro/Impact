@@ -48,3 +48,20 @@ h5 {
 	letter-spacing: 0;
 	font-size: 0;
 }
+
+/*SVG ICON SYSTEM*/
+.icon-inline {
+	display: inline-flex;
+	align-self: center;
+}
+
+.icon-inline svg, .icon-inline img {
+	height: 1em;
+	width: 1em;
+	fill: currentColor;
+}
+
+.icon-inline.baseline svg, .icon-inline img {
+	top: .125em;
+	position: relative;
+}

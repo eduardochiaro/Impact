@@ -1,7 +1,3 @@
-
-;(function( $ ){
-  $('[data-toggle="tooltip"]').tooltip();
-})( window.jQuery );
 /* eslint-env browser */
 
 /**

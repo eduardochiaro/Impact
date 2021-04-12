@@ -1,0 +1,11 @@
+<nav id="pagination" class="pt-4" role="navigation">
+	<ul class="pagination justify-content-center pagination-lg">
+    {{#if prev}}
+		<li class="page-item"><a class="page-link py-2 mt-1" href="{{page_url prev}}">&laquo; Newer Posts</a></li>
+    {{/if}}
+		<li class="page-item active"> <span class="page-link rounded">Page {{page}} of {{pages}}</span></li>
+    {{#if next}}
+		<li class="page-item"><a class="page-link py-2 mt-1" href="{{page_url next}}">Older Posts &raquo;</a></li>
+    {{/if}}
+	</ul>
+</nav>

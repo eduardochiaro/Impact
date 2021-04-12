@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{#post}}
+
+<article id="article" class="article {{post_class}}">
+
+	<header class="article-header">
+
+		<div class="jumbotron jumbotron-fluid">
+
+		{{#if feature_image}}
+			<figure class="article-image">
+				<img class="site-header-cover"
+						srcset="{{img_url feature_image size="s"}} 300w,
+										{{img_url feature_image size="m"}} 600w,
+										{{img_url feature_image size="l"}} 1000w,
+										{{img_url feature_image size="xl"}} 2000w"
+						sizes="(min-width: 1400px) 1400px, 92vw"
+						src="{{img_url feature_image size="xl"}}"
+						alt="{{title}}"
+				/>
+			</figure>
+		{{/if}}
+			<div class="container-fluid position-relative my-5">
+
+				{{#if primary_tag}}
+				<section class="article-tag">
+						<a class="badge badge-primary px-3 py-2" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+				</section>
+				{{/if}}
+				<h1>{{title}}</h1>
+				{{#if custom_excerpt}}
+				<p class="d-block">{{custom_excerpt}}</p>
+				{{/if}}
+				<div class="article-byline">
+					<section class="article-byline-content">
+						<div class="row author-list">
+							{{#foreach authors}}
+							<div class="col-auto pl-0">
+								{{#if profile_image}}
+								<a href="{{url}}" class="author-avatar d-inline-block">
+									<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+								</a>
+								{{else}}
+								<a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+								{{/if}}
+							</div>
+							{{/foreach}}
+							<div class="col article-byline-meta">
+								<h4 class="author-name">{{authors}}</h4>
+									<div class="byline-meta-content">
+											<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+											<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+									</div>
+							</div>
+						</div>
+					</section>
+        </div>
+			</div>
+		</div>
+	</header>
+
+	<section>
+    {{content}}
+	</section>
+
+</article>
+
+{{/post}}

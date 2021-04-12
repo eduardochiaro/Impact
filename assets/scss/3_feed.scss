@@ -28,9 +28,18 @@
 		.card-image-top {
 			width: 100%;
 			object-fit: cover;
+			@include media-breakpoint-down(md) {
+				height: 20vmax;
+			}
 		}
 		.card-text {
 			font-size: 1rem;
+		}
+		.badge-primary {
+			background-color: var(--ghost-accent-color);
+			&:hover {
+				filter: brightness(0.8);
+			}
 		}
 		a {
 			color: $darkgrey;
@@ -49,41 +58,72 @@
 				background-repeat: no-repeat;
 				background-position: 50%;
 				background-size: cover;
-				border: 2px solid $green-sheen;
 				border-radius: 50%;
 			}
 		}
 		.card-footer {
+			font-family: $header-font;
 			span {
 				border-right: 1px solid #c5d2d9;
 			}
 		}
-		.card-tag {
+		.badge {
 			font-family: $header-font;
 			text-transform: uppercase;
 			font-size: 0.9rem;
 			position: absolute;
+			letter-spacing: 0.1rem;
 			right: 1rem;
 			top: 1rem;
 		}
-		&.no-picture {
+		&.no-image {
 			.card-image-container {
 				margin-bottom: 2rem;
 			}
+		}
+		.card-body {
+			padding-bottom: 3rem;
+		}
+		.card-footer {
+			background: none;
+			border: none;
+
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
 		}
 	}
 }
 
 #featured {
 	.card {
+		.badge.tag-featured {
+			z-index: 3;
+			left: 1rem;
+			right: auto;
+			svg {
+				width: 1rem;
+				height: 1rem;
+			}
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
 		.card-image-link {
 			position: relative;
 			min-height: 390px;
+			@include media-breakpoint-down(md) {
+				min-height: 20vmax;
+			}
 		}
 		.card-image-top {
 			position: absolute;
 			width: 100%;
 			height: 100%;
+			@include media-breakpoint-down(md) {
+				height: 20vmax;
+			}
 		}
 		.card-footer {
 			background: none;

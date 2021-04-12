@@ -22,9 +22,9 @@ $black-coral: #696d7dff;
 
 $system-font: -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
 $header-font: 'Raleway', -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
-
-$ghost-accent-color: $black-coral;
-
+:root{
+  --ghost-accent-color: $black-coral;
+}
 $colors: (
   "blue": $blue,
   "purple": $purple,
@@ -36,8 +36,11 @@ $colors: (
 );
 
 $theme-colors: ( 
-	"primary": $ghost-accent-color,
-	"secondary": $green-sheen 
+	"primary": $black-coral,
+	"secondary": $green-sheen,
+  "dark": $darkgrey,
+  "light": $whitegrey,
+  "warning": $yellow
 );
 
-$link-color: $ghost-accent-color;
+//$link-color: var(--ghost-accent-color);

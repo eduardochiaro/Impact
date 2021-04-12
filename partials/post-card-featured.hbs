@@ -1,0 +1,51 @@
+<article class="card mt-2 {{post_class}}">
+	<div class="row no-gutters">
+    {{#if feature_image}}
+		<div class="col-md-8">
+			<a href="{{url}}" class="d-block card-image-link">
+				<span class="card-tag badge badge-warning tag-featured px-3 py-2">
+					<span class="icon-inline baseline mr-1">{{> "icons/star"}}</span> Featured
+				</span>
+				<img class="card-image-top"
+					srcset="{{img_url feature_image size="s"}} 300w,
+									{{img_url feature_image size="m"}} 600w,
+									{{img_url feature_image size="l"}} 1000w,
+									{{img_url feature_image size="xl"}} 2000w"
+					sizes="(max-width: 1000px) 400px, 800px"
+					src="{{img_url feature_image size="m"}}"
+					alt="{{title}}"
+					loading="lazy"
+				/>
+				</a>
+		</div>
+    {{/if}}			
+		<div class="col-md-4">
+			<a href="{{url}}">
+				<div class="card-body">
+					{{#if primary_tag}}
+					{{#primary_tag}}
+					<span class="card-tag badge badge-primary px-3 py-2 float-right">{{name}}</span>
+					{{/primary_tag}}
+					{{/if}}
+					<h5 class="card-title mb-3 mt-5">{{title}}</h5>
+					<p class="card-text">{{excerpt characters="140"}}</p>				
+				</div>
+			</a>
+			<div class="card-footer">
+				<div class="row">
+					<div class="col-auto">
+						<p class="card-text pt-2"><small class="text-muted"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="mx-2"></span> {{reading_time}}</small></p>
+					</div>
+					<div class="col text-right reset-inline">
+						{{#foreach authors}}
+						<a href="{url}}" class="card-author d-inline-block" data-toggle="tooltip" aria-label="{{name}}" title="Posted by {{name}}">
+							<div style="background-image: url({{img_url profile_image size="xs"}}?s=250&amp;d=mm&amp;r=x);"></div>
+						</a>
+						{{/foreach}}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</article>
