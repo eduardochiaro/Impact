@@ -7664,32 +7664,32 @@ h5 {
       content: '> '; }
     @media (min-width: 576px) {
       #article .article-content h1, #article .article-content h2, #article .article-content h3, #article .article-content h4, #article .article-content h5, #article .article-content h6 {
-        max-width: 540px; } }
+        max-width: calc(540px - 6rem); } }
     @media (min-width: 768px) {
       #article .article-content h1, #article .article-content h2, #article .article-content h3, #article .article-content h4, #article .article-content h5, #article .article-content h6 {
-        max-width: 720px; } }
+        max-width: calc(720px - 6rem); } }
     @media (min-width: 992px) {
       #article .article-content h1, #article .article-content h2, #article .article-content h3, #article .article-content h4, #article .article-content h5, #article .article-content h6 {
-        max-width: 960px; } }
+        max-width: calc(960px - 6rem); } }
     @media (min-width: 1200px) {
       #article .article-content h1, #article .article-content h2, #article .article-content h3, #article .article-content h4, #article .article-content h5, #article .article-content h6 {
-        max-width: 1140px; } }
+        max-width: calc(1140px - 6rem); } }
   #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote {
     width: 100%;
     margin-right: auto;
     margin-left: auto; }
     @media (min-width: 576px) {
       #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote {
-        max-width: 540px; } }
+        max-width: calc(540px - 6rem); } }
     @media (min-width: 768px) {
       #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote {
-        max-width: 720px; } }
+        max-width: calc(720px - 6rem); } }
     @media (min-width: 992px) {
       #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote {
-        max-width: 960px; } }
+        max-width: calc(960px - 6rem); } }
     @media (min-width: 1200px) {
       #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote {
-        max-width: 1140px; } }
+        max-width: calc(1140px - 6rem); } }
   #article .article-content > blockquote {
     position: relative;
     font-style: italic;
@@ -7743,10 +7743,32 @@ h5 {
   width: calc(100% + 12rem);
   margin-left: -6rem;
   height: auto; }
+  @media (max-width: 991.98px) {
+    .kg-width-wide img {
+      width: calc(100% + 2rem);
+      margin-left: -1rem; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .kg-width-wide img {
+      width: calc(100% + 12rem);
+      margin-left: -6rem; } }
+  @media (min-width: 1200px) {
+    .kg-width-wide img {
+      width: calc(100% + 12rem);
+      margin-left: -6rem; } }
 
-.kg-width-wide .kg-gallery-container {
-  margin-left: -6rem;
-  margin-right: -6rem; }
+@media (max-width: 991.98px) {
+  .kg-width-wide .kg-gallery-container {
+    margin-left: 0;
+    margin-right: 0; } }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .kg-width-wide .kg-gallery-container {
+    padding-top: 10rem; } }
+
+@media (min-width: 1200px) {
+  .kg-width-wide .kg-gallery-container {
+    margin-left: -6rem;
+    margin-right: -6rem; } }
 
 .kg-width-full {
   display: inline-block;
