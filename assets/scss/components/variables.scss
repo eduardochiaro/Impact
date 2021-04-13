@@ -20,11 +20,13 @@ $black-coral: #696d7dff;
 
 /* Font Family */
 
-$system-font: -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
-$header-font: 'Raleway', -apple-system, "Open Sans", sans-serif, "Helvetica Neue";
+$system-font: 'Open Sans' -apple-system, sans-serif, 'Helvetica Neue';
+$header-font: 'Raleway', 'Open Sans', -apple-system,  sans-serif, 'Helvetica Neue';
+
 :root{
   --ghost-accent-color: $black-coral;
 }
+
 $colors: (
   "blue": $blue,
   "purple": $purple,

@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');    
 const browserSync = require('browser-sync').create();
 const util = require('gulp-util');
+const zip = require('gulp-zip');
 
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer');
@@ -38,7 +39,7 @@ function js() {
     .pipe(browserSync.stream());
 }
 
-function watcher() {
+function design() {
 	browserSync.init({
 		server: {
 			baseDir: "./designs",
@@ -48,10 +49,30 @@ function watcher() {
 			index: "/index.html"
 		}
 	});
-	gulp.watch('./assets/scss/**/*.scss', css)
-	gulp.watch('./assets/js/**/*.js', js);
 	gulp.watch('./designs/*.html').on('change', browserSync.reload);
 }
 
+function zipper(done) {
+	const filename = require('./package.json').name + '.zip';
+	pump([
+			src([
+					'**',
+					'!node_modules', '!node_modules/**',
+					'!dist', '!dist/**',
+					'!yarn-error.log'
+			]),
+			zip(filename),
+			dest('dist/')
+	], handleError(done));
+}
+
+const cssWatcher = () => gulp.watch('./assets/scss/**', css);
+const jsWatcher = () => gulp.watch('./assets/js/**/*.js', js);
+
+const watcher = gulp.parallel(cssWatcher, jsWatcher);
+const designW = gulp.parallel(cssWatcher, jsWatcher, design);
+const build = gulp.series(css, js);
+
 exports.style = css;
-exports.watch = gulp.series(css, js, watcher);
+exports.default = gulp.series(build, watcher);
+exports.design = gulp.series(build, designW);

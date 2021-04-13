@@ -1,3 +1,7 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
 @mixin transparent-background($background: #333333, $opacity: 0.6) {
 	position: relative;
 	z-index: 0;
@@ -85,4 +89,16 @@
   background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
   background: -moz-linear-gradient(top,  $from, $to);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin containerReplace() {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
 }
