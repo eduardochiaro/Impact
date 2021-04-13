@@ -63,7 +63,51 @@
 	<section class="article-content py-md-5">
     {{content}}
 	</section>
-
 </article>
+
+{{#unless @member}}
+<section id="subscribe">
+		<div class="row m-0">
+			<div class="col text-center">
+				<h2>Sign up for more like this.</h2>
+				<a class="subscribe-button" href="#/portal">
+						<div>Enter your email</div>
+						<span class="btn btn-primary">Subscribe</span>
+				</a>
+			</div>
+		</div>
+</section>
+{{/unless}}
+
+<aside id="more">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<div class="col">
+				<div class="card mt-2 bg-dark text-white">
+					<img src="{{primary_tag.feature_image}}" class="card-img" alt="">
+					<div class="card-img-overlay">
+						<h5 class="card-title">{{primary_tag.name}}</h5>
+						<p class="card-text">{{primary_tag.description}}</p>
+
+						<a href="{{primary_tag.url}}" class="btn mt-5 btn-light w-100">
+						{{#get "posts" filter="tag:{{primary_tag.slug}}" limit="all" as |all_in_tags pages|}}
+							{{pages.total}} {{plural pages.total empty="" singular="article" plural="articles"}} &raquo;
+						{{/get}}
+						</a>
+					</div>
+				</div>
+			</div>
+			{{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
+				{{#if more_posts}}
+					{{#foreach more_posts}}
+						<div class="col">
+						{{> "post-card"}}
+						</div>
+					{{/foreach}}
+				{{/if}}
+			{{/get}}
+		</div>
+  </div>
+</aside>
 
 {{/post}}

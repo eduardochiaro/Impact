@@ -5,6 +5,7 @@
 
 .kg-image-card {
 	img {
+		border-radius: 0.3rem;
 		width: 100%;
 		height: auto;
 	}
@@ -14,7 +15,6 @@
     width: calc(100% + 12rem);
     margin-left: -6rem;
 		height: auto;
-
 
 		@include media-breakpoint-down(md) {
 			width: calc(100% + 2rem);
@@ -30,6 +30,15 @@
 		}
 	}
 	.kg-gallery-container {
+		img {
+			border-radius: 0.3rem;
+			transition: all .2s ease-in-out;
+			&:hover {
+				box-shadow: 0 18px 32px -18px $darkgrey;
+				-webkit-transform: translateY(-0.5rem);
+				transform: translateY(-0.5rem);
+			}
+		}
 
 		@include media-breakpoint-down(md) {
 			margin-left: 0;
@@ -54,6 +63,7 @@
 	margin-right: -15px !important;
 
 	img {
+		border-radius: 0;
 		width: 100%;
 	}
 }
@@ -61,14 +71,14 @@
 .kg-card figcaption {
 	padding: 1.5rem 1.5rem 0;
 	text-align: center;
-	color: rgba(0,0,0,0.5);
+	color: $darkgrey;
 	font-weight: 600;
 	font-size: 1.1rem;
 	line-height: 1.4em;
 	font-family: $header-font;
 }
 .kg-card figcaption strong {
-	color: rgba(0,0,0,0.8);
+	color: var(--ghost-accent-color);
 }
 
 
@@ -147,10 +157,17 @@ Ghost editor. */
 	color: currentColor;
 	font-family: var(--font-sans-serif);
 	text-decoration: none !important;
-	background: rgba(255,255,255,0.6);
-	border-radius: 5px;
-	box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
+	background: $white;
+	border-radius: 0.3rem;
+	border: 1px solid $platinum;
 	overflow: hidden;
+
+	transition: all .2s ease-in-out;
+	&:hover {
+		box-shadow: 0 18px 32px -18px $darkgrey;
+		-webkit-transform: translateY(-0.5rem);
+		transform: translateY(-0.5rem);
+	}
 }
 
 .kg-bookmark-content {
@@ -164,18 +181,18 @@ Ghost editor. */
 }
 
 .kg-bookmark-title {
-	font-size: 1.5rem;
-	line-height: 1.4em;
+	font-size: 1.3rem;
+	line-height: 1.3em;
 	font-weight: 600;
-	color: #15171A;
+	color: $darkgrey;
 }
 
 .kg-bookmark-description {
 	display: -webkit-box;
-	font-size: 1.4rem;
-	line-height: 1.5em;
+	font-size: 1rem;
+	line-height: 1em;
 	margin-top: 3px;
-	color: #626d79;
+	color: $black-coral;
 	font-weight: 400;
 	max-height: 44px;
 	overflow-y: hidden;
@@ -189,11 +206,11 @@ Ghost editor. */
 	margin-top: 22px;
 	width: 100%;
 	color: $midgrey;
-	font-size: 1.4rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 
 	& > span:nth-of-type(2) {
-		color: #626d79;
+		color: $black-coral;
 		font-weight: 400;
 	}
 	
@@ -246,4 +263,19 @@ Ghost editor. */
 .kg-width-full.kg-card-hascaption {
 	display: grid;
 	grid-template-columns: inherit; 
+}
+
+.fluid-width-video-wrapper {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }

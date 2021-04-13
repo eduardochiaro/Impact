@@ -68,3 +68,13 @@ h5 {
 	top: .125em;
 	position: relative;
 }
+
+//BTN
+
+.btn-primary {
+	background-color: var(--ghost-accent-color);
+	border-color: var(--ghost-accent-color);
+	&:hover {
+		filter: brightness(0.8);
+	}
+}

@@ -108,8 +108,8 @@
 	}
 	
 	.article-content {
-		font-size: 1.1rem;
-		line-height: 1.8rem;
+		font-size: 1.3rem;
+    line-height: 2rem;
 		h1, h2, h3 ,h4 ,h5 ,h6 {
 			color: var(--ghost-accent-color);
 			margin-top: 2rem;
@@ -146,7 +146,7 @@
 			line-height: 1em;
 			color: $darkgrey;
 			background: $platinum;
-			border-radius: 0.25em;
+			border-radius: 0.3rem;
 			white-space: nowrap;
 		}
 
@@ -157,7 +157,7 @@
 			font-size: 1rem;
 			line-height: 1.5em;
 			background: $darkgrey;
-			border-radius: 5px;
+			border-radius: 0.3rem;
 			box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 		}
 	}
@@ -167,4 +167,44 @@
 	:not(.kg-card):not([id]) + .kg-card {
     margin-top: 3rem;
 	}	
+}
+#subscribe {
+	background-color: $black-coral;
+	color: $white;
+	margin: 0 -15px;
+	padding: 3rem 0;
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+	.subscribe-button {
+		display: inline-block;
+		background-color: $white;
+
+		position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px 5px 5px 15px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+		
+	}
+}
+#more {
+	padding: 3rem 0 4rem;
+	margin: 0 -15px;
+	background-color: $platinum;
+	.card {
+		.card-image-top {
+			max-height: 14vh;
+		}
+		&.bg-dark {
+			img {
+				filter: brightness(0.6);
+			}
+		}
+	}
 }
