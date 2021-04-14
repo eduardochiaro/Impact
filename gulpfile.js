@@ -54,16 +54,14 @@ function design() {
 
 function zipper(done) {
 	const filename = require('./package.json').name + '.zip';
-	pump([
-			src([
+	return gulp.src([
 					'**',
 					'!node_modules', '!node_modules/**',
 					'!dist', '!dist/**',
 					'!yarn-error.log'
-			]),
-			zip(filename),
-			dest('dist/')
-	], handleError(done));
+			])
+			.pipe(zip(filename))
+			.pipe(gulp.dest('dist/'));
 }
 
 const cssWatcher = () => gulp.watch('./assets/scss/**', css);
@@ -76,3 +74,4 @@ const build = gulp.series(css, js);
 exports.style = css;
 exports.default = gulp.series(build, watcher);
 exports.design = gulp.series(build, designW);
+exports.zip = gulp.series(build, zipper);
