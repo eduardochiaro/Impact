@@ -40,12 +40,8 @@
 						{{#if @site.twitter}}
 						<a href="{{twitter_url @site.twitter}}" class="icon mr-4">{{> "icons/twitter"}}</a>
 						{{/if}}
+						<a href="{{@site.url}}/rss/" class="icon mr-4">{{> "icons/rss"}}</a>
 
-						{{#unless @member}}
-								<a class="btn btn-primary" href="#/portal/signup">Subscribe</a>
-						{{else}}
-								<a class="btn btn-primary" href="#/portal/account">Account</a>
-						{{/unless}}
 					</div>
 				</div>
 			</div>
