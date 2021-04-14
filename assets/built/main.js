@@ -2,6 +2,7 @@
 ;(function( $ ){
   $('[data-toggle="tooltip"]').tooltip();
 })( window.jQuery );
+
 /* eslint-env browser */
 
 /**
@@ -25,7 +26,7 @@
 	}
 
 	// post feed element
-	var feedElement = document.querySelector('.post-feed');
+	var feedElement = document.querySelector('.grid');
 	if (!feedElement) {
 		return;
 	}

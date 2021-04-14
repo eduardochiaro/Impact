@@ -1,0 +1,48 @@
+{{!< default}}
+
+{{#tag}}
+
+<section id="tagged" class="tag">
+
+	<header class="article-header">
+
+		<div class="jumbotron jumbotron-fluid">
+
+		{{#if feature_image}}
+			<figure class="article-image">
+				<img class="site-header-cover"
+						srcset="{{img_url feature_image size="s"}} 300w,
+										{{img_url feature_image size="m"}} 600w,
+										{{img_url feature_image size="l"}} 1000w,
+										{{img_url feature_image size="xl"}} 2000w"
+						sizes="(min-width: 1400px) 1400px, 92vw"
+						src="{{img_url feature_image size="xl"}}"
+						alt="{{title}}"
+				/>
+			</figure>
+		{{/if}}
+			<div class="container-fluid position-relative mt-5">
+				<section class="article-tag">
+					<span class="badge badge-primary px-3 py-2" style="background-color: {{accent_color}};">A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}</span>
+				</section>
+				<h1>{{name}}</h1>
+				{{#if description}}
+				<p class="d-block">{{description}}</p>
+				{{/if}}
+			</div>
+		</div>
+	</header>
+</section>
+
+{{/tag}}
+
+<div class="container pb-4">
+		<div id="feed" class="post-feed pt-3">
+			<div class="grid">
+			{{#foreach posts}}
+				{{> "post-card"}}
+			{{/foreach}}
+			</div>
+		</div>
+	</div>
+</div>

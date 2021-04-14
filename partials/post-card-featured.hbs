@@ -24,11 +24,11 @@
 				<div class="card-body">
 					{{#if primary_tag}}
 					{{#primary_tag}}
-					<span class="card-tag badge badge-primary px-3 py-2 float-right">{{name}}</span>
+					<span class="card-tag badge badge-primary px-3 py-2 float-right" style="background-color: {{accent_color}};">{{name}}</span>
 					{{/primary_tag}}
 					{{/if}}
 					<h5 class="card-title mb-3 mt-5">{{title}}</h5>
-					<p class="card-text">{{excerpt characters="140"}}</p>				
+					<p class="card-text card-excerpt">{{excerpt characters="340"}}</p>				
 				</div>
 			</a>
 			<div class="card-footer">

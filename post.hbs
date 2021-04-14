@@ -24,9 +24,11 @@
 			<div class="container-fluid position-relative mt-5">
 
 				{{#if primary_tag}}
+				{{#primary_tag}}
 				<section class="article-tag">
-						<a class="badge badge-primary px-3 py-2" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+					<a class="badge badge-primary px-3 py-2" href="{{url}}" style="background-color: {{accent_color}};">{{name}}</a>
 				</section>
+				{{/primary_tag}}
 				{{/if}}
 				<h1>{{title}}</h1>
 				{{#if custom_excerpt}}
@@ -35,8 +37,8 @@
 				<div class="article-byline">
 					<section class="article-byline-content">
 						<div class="row author-list">
+							<div class="col-auto">
 							{{#foreach authors}}
-							<div class="col-auto pl-0">
 								{{#if profile_image}}
 								<a href="{{url}}" class="author-avatar d-inline-block">
 									<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
@@ -44,8 +46,8 @@
 								{{else}}
 								<a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
 								{{/if}}
-							</div>
 							{{/foreach}}
+							</div>
 							<div class="col article-byline-meta">
 								<h4 class="author-name">{{authors}}</h4>
 									<div class="byline-meta-content">
@@ -65,49 +67,40 @@
 	</section>
 </article>
 
-{{#unless @member}}
-<section id="subscribe">
-		<div class="row m-0">
-			<div class="col text-center">
-				<h2>Sign up for more like this.</h2>
-				<a class="subscribe-button" href="#/portal">
-						<div>Enter your email</div>
-						<span class="btn btn-primary">Subscribe</span>
-				</a>
-			</div>
-		</div>
-</section>
-{{/unless}}
+	{{> "subscribe-none"}}
 
-<aside id="more">
-	<div class="container">
-		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-			<div class="col">
-				<div class="card mt-2 bg-dark text-white">
-					<img src="{{primary_tag.feature_image}}" class="card-img" alt="">
-					<div class="card-img-overlay">
-						<h5 class="card-title">{{primary_tag.name}}</h5>
-						<p class="card-text">{{primary_tag.description}}</p>
+<section id="more">
+	<aside class="container grid">
 
-						<a href="{{primary_tag.url}}" class="btn mt-5 btn-light w-100">
-						{{#get "posts" filter="tag:{{primary_tag.slug}}" limit="all" as |all_in_tags pages|}}
+		{{#if primary_tag}}
+		{{#primary_tag}}
+		<div class="card mt-2 tag-card text-white">
+			<img src="{{feature_image}}" class="card-img" alt="">
+			<div class="card-img-overlay">
+				<a href="{{url}}" class="text-white">
+					<div class="h-100 position-relative">
+						<h5 class="card-title">{{name}}</h5>
+						<p class="card-text">{{description}}</p>
+
+						<span class="btn btn-light w-100">
+						{{#get "posts" filter="tag:{{slug}}" limit="all" as |all_in_tags pages|}}
 							{{pages.total}} {{plural pages.total empty="" singular="article" plural="articles"}} &raquo;
 						{{/get}}
-						</a>
+						</span>
 					</div>
-				</div>
+					</a>
 			</div>
-			{{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
-				{{#if more_posts}}
-					{{#foreach more_posts}}
-						<div class="col">
-						{{> "post-card"}}
-						</div>
-					{{/foreach}}
-				{{/if}}
-			{{/get}}
 		</div>
-  </div>
-</aside>
+		{{/primary_tag}}
+		{{/if}}
+		{{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
+			{{#if more_posts}}
+				{{#foreach more_posts}}
+					{{> "post-card"}}
+				{{/foreach}}
+			{{/if}}
+		{{/get}}
+	</aside>
+</section>
 
 {{/post}}

@@ -30,13 +30,13 @@
 			{{/foreach}}
 		</div>
 		{{/if}}
-	
-		<div id="feed" class="post-feed card-columns pt-3">
-		{{#get "posts" include="tags,authors" limit=@config.posts_per_page as |main|}}
-			{{#foreach main}}
+	{{/get}}
+		<div id="feed" class="post-feed pt-3">
+			<div class="grid">
+			{{#foreach posts}}
 				{{> "post-card"}}
 			{{/foreach}}
-		{{/get}}
-	{{/get}}
+			</div>
+		</div>
 	</div>
 </div>

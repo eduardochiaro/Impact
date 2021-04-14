@@ -190,13 +190,13 @@ Ghost editor. */
 .kg-bookmark-description {
 	display: -webkit-box;
 	font-size: 1rem;
-	line-height: 1em;
+	line-height: 1.3rem;
 	margin-top: 3px;
 	color: $black-coral;
 	font-weight: 400;
-	max-height: 44px;
+	//max-height: 44px;
 	overflow-y: hidden;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
 

@@ -3,7 +3,7 @@
 		<div class="card-image-container">
 		{{#if primary_tag}}
 		{{#primary_tag}}
-		<span class="card-tag badge badge-primary px-3 py-2">{{name}}</span>
+		<span class="card-tag badge badge-primary px-3 py-2" style="background-color: {{accent_color}};">{{name}}</span>
 		{{/primary_tag}}
 		{{/if}}
     {{#if feature_image}}
@@ -17,12 +17,25 @@
 				alt="{{title}}"
 				loading="lazy"
 			/>
+		{{else}}
+    	{{#if primary_tag.feature_image}}
+			<img class="card-image-top"
+				srcset="{{img_url primary_tag.feature_image size="s"}} 300w,
+								{{img_url primary_tag.feature_image size="m"}} 600w,
+								{{img_url primary_tag.feature_image size="l"}} 1000w,
+								{{img_url primary_tag.feature_image size="xl"}} 2000w"
+				sizes="(max-width: 1000px) 400px, 800px"
+				src="{{img_url primary_tag.feature_image size="m"}}"
+				alt="{{title}}"
+				loading="lazy"
+			/>
+    	{{/if}}
     {{/if}}
 		</div>
 		
 		<div class="card-body">
 			<h5 class="card-title mb-3">{{title}}</h5>
-			<p class="card-text">{{excerpt characters="140"}}</p>
+			<p class="card-text  card-excerpt">{{excerpt characters="240"}}</p>
 		</div>
 	</a>
 	<div class="card-footer">

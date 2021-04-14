@@ -6,15 +6,17 @@
 #feed,
 #featured,
 #more {
-	&.card-columns {
+	.grid {
+		display: grid;
+		grid-gap: 2rem;
 		@include media-breakpoint-down(md) {
-			column-count: 1;
+			grid-template-columns: 1fr;
 		}
 		@include media-breakpoint-only(lg) {
-			column-count: 2;
+			grid-template-columns: 1fr 1fr;
 		}
 		@include media-breakpoint-up(xl) {
-			column-count: 3;
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 	.card {
@@ -29,10 +31,8 @@
 		}
 		.card-image-top {
 			width: 100%;
+			height: 20vh;
 			object-fit: cover;
-			@include media-breakpoint-down(md) {
-				height: 20vmax;
-			}
 		}
 		.card-text {
 			font-size: 1rem;
@@ -53,6 +53,9 @@
 		.card-author {
 			width: 25px;
 			height: 25px;
+			margin: 0 -6px;
+			overflow: hidden;
+			position: relative;
 			div {
 				width: 100%;
 				height: 100%;
@@ -61,10 +64,34 @@
 				background-position: 50%;
 				background-size: cover;
 				border-radius: 50%;
+				border: 1px solid $white;
+			}
+			&:hover {
+				z-index: 11 !important;
+			}
+			&:first-child {
+				z-index: 10;
+			}
+
+			&:nth-child(2) {
+				z-index: 9;
+			}
+
+			&:nth-child(3) {
+				z-index: 8;
+			}
+
+			&:nth-child(4) {
+				z-index: 7;
+			}
+
+			&:nth-child(5) {
+				z-index: 6;
 			}
 		}
 		.card-footer {
 			font-family: $header-font;
+			font-weight: 500;
 			span {
 				border-right: 1px solid #c5d2d9;
 			}
@@ -79,12 +106,22 @@
 			top: 1rem;
 		}
 		&.no-image {
-			.card-image-container {
-				margin-bottom: 2rem;
+			.card-image-container { 
+				min-height: 20vh;
+				background-image: url(/assets/images/bg-photo.png);
+				background-size: cover;
+				background-position: center;
 			}
 		}
 		.card-body {
-			padding-bottom: 3rem;
+			padding-bottom: 5rem;
+			.card-excerpt {
+				display: -webkit-box;
+				overflow-y: hidden;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				word-break: break-word;
+			}
 		}
 		.card-footer {
 			background: none;
@@ -114,7 +151,8 @@
 		}
 		.card-image-link {
 			position: relative;
-			min-height: 390px;
+			min-height: 380px;
+			height: 100%;
 			@include media-breakpoint-down(md) {
 				min-height: 20vmax;
 			}
@@ -127,14 +165,20 @@
 				height: 20vmax;
 			}
 		}
+		.card-body {
+			.card-excerpt {
+				-webkit-line-clamp: 6;
+			}
+		}
 		.card-footer {
 			background: none;
 			border: none;
 			.card-author {
 				width: 45px;
 				height: 45px;
+				margin: 0 -9px;
 				div {
-					border-width: 3px;	
+					border-width: 2px;	
 				}
 			}
 		}

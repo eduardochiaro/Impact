@@ -11,13 +11,13 @@ body {
 	font-style: normal;
 	letter-spacing: 0;
 	text-rendering: optimizeLegibility;
-	background: $platinum;
+	background: $white;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-moz-font-feature-settings: "liga" on;
-	&.post-template {
-		background: $white;
+	&.home-template {
+		background: $platinum;
 	}
 }
 h1, h2, h3, h4, h5 {
@@ -72,8 +72,8 @@ h5 {
 //BTN
 
 .btn-primary {
-	background-color: var(--ghost-accent-color);
-	border-color: var(--ghost-accent-color);
+	background-color: var(--ghost-accent-color) !important; 
+	border-color: var(--ghost-accent-color) !important;
 	&:hover {
 		filter: brightness(0.8);
 	}

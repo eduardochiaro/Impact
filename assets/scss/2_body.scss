@@ -32,6 +32,7 @@
 	}
 	.nav-item {
 		font-family: $header-font;
+		font-weight: 500;
 		font-size: 0.8rem;
     letter-spacing: 0.2rem;
 		text-transform: uppercase;
@@ -104,6 +105,7 @@
 	color: $white;
 	font-size: 0.9rem;
 	font-family: $header-font;
+	font-weight: 500;
 	a {
 		color: $white;
 	}
