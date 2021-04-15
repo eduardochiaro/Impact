@@ -7288,7 +7288,7 @@ h1 {
   letter-spacing: 0.5rem; }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: 0.45rem; }
 
 h3 {
@@ -7358,6 +7358,8 @@ h5 {
     letter-spacing: 0.4rem;
     font-weight: 700;
     font-size: 1.1rem; }
+  #header h1 {
+    text-transform: none; }
   #header .nav-item {
     font-family: "Raleway", "Open Sans", -apple-system, sans-serif, "Helvetica Neue";
     font-weight: 500;
@@ -7851,51 +7853,56 @@ h5 {
       #tagged .article-content h5,
       #tagged .article-content h6 {
         max-width: calc(1140px - 6rem); } }
-  #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul,
+  #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul, #article .article-content > hr,
   #tagged .article-content > p,
   #tagged .article-content > pre,
   #tagged .article-content > figure,
   #tagged .article-content > blockquote,
   #tagged .article-content > ol,
-  #tagged .article-content > ul {
+  #tagged .article-content > ul,
+  #tagged .article-content > hr {
     width: 100%;
     margin-right: auto;
     margin-left: auto; }
     @media (min-width: 576px) {
-      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul,
+      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul, #article .article-content > hr,
       #tagged .article-content > p,
       #tagged .article-content > pre,
       #tagged .article-content > figure,
       #tagged .article-content > blockquote,
       #tagged .article-content > ol,
-      #tagged .article-content > ul {
+      #tagged .article-content > ul,
+      #tagged .article-content > hr {
         max-width: calc(540px - 6rem); } }
     @media (min-width: 768px) {
-      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul,
+      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul, #article .article-content > hr,
       #tagged .article-content > p,
       #tagged .article-content > pre,
       #tagged .article-content > figure,
       #tagged .article-content > blockquote,
       #tagged .article-content > ol,
-      #tagged .article-content > ul {
+      #tagged .article-content > ul,
+      #tagged .article-content > hr {
         max-width: calc(720px - 6rem); } }
     @media (min-width: 992px) {
-      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul,
+      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul, #article .article-content > hr,
       #tagged .article-content > p,
       #tagged .article-content > pre,
       #tagged .article-content > figure,
       #tagged .article-content > blockquote,
       #tagged .article-content > ol,
-      #tagged .article-content > ul {
+      #tagged .article-content > ul,
+      #tagged .article-content > hr {
         max-width: calc(960px - 6rem); } }
     @media (min-width: 1200px) {
-      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul,
+      #article .article-content > p, #article .article-content > pre, #article .article-content > figure, #article .article-content > blockquote, #article .article-content > ol, #article .article-content > ul, #article .article-content > hr,
       #tagged .article-content > p,
       #tagged .article-content > pre,
       #tagged .article-content > figure,
       #tagged .article-content > blockquote,
       #tagged .article-content > ol,
-      #tagged .article-content > ul {
+      #tagged .article-content > ul,
+      #tagged .article-content > hr {
         max-width: calc(1140px - 6rem); } }
   #article .article-content > blockquote,
   #tagged .article-content > blockquote {

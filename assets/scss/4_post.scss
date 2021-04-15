@@ -162,10 +162,9 @@
 			}
 			@include containerReplace();
 		}
-		> p, > pre, > figure, > blockquote, > ol, > ul {
+		> p, > pre, > figure, > blockquote, > ol, > ul, > hr {
 			@include containerReplace();
 		}
-
 		& > blockquote {
 			position: relative;
 			font-style: italic;

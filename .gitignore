@@ -80,3 +80,5 @@ typings/
 
 #project
 dist
+.env
+.env.*
