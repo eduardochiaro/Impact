@@ -13,6 +13,8 @@
  * to the element with the class "post-feed" in the currently viewed page.
  */
 
+const useLazy = false;
+
 (function (window, document) {
 	// next link element
 	var nextElement = document.querySelector('link[rel=next]');
@@ -36,7 +38,7 @@
 	var lastDocumentHeight = document.documentElement.scrollHeight;
 
 	function onPageLoad() {
-		if (this.status === 404) {
+		if (this.status === 404 && useLazy) {
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('resize', onResize);
 			return;
@@ -56,8 +58,13 @@
 		if (resNextElement) {
 			nextElement.href = resNextElement.href;
 		} else {
-			window.removeEventListener('scroll', onScroll);
-			window.removeEventListener('resize', onResize);
+			//console.log('last');
+			if (useLazy) {
+				window.removeEventListener('scroll', onScroll);
+				window.removeEventListener('resize', onResize);
+			} else {
+				$('.load-next-page').remove();
+			}
 		}
 
 		// sync status
@@ -73,9 +80,11 @@
 		}
 
 		// return if not scroll to the bottom
-		if (lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
-			ticking = false;
-			return;
+		if (useLazy) {
+			if (lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
+				ticking = false;
+				return;
+			}
 		}
 
 		loading = true;
@@ -105,8 +114,15 @@
 		requestTick();
 	}
 
-	window.addEventListener('scroll', onScroll, {passive: true});
-	window.addEventListener('resize', onResize);
-
-	requestTick();
+	if (useLazy) {
+		window.addEventListener('scroll', onScroll, {passive: true});
+		window.addEventListener('resize', onResize);
+	
+		requestTick();
+	} else {
+		$('.load-next-page').on('click', function(event) {
+			event.preventDefault();
+			onUpdate();
+		})
+	}
 })(window, document);

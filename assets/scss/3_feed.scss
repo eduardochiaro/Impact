@@ -136,7 +136,18 @@
 }
 
 #featured {
+
+	@include media-breakpoint-down(md) {
+		margin-top: -2rem;
+	}
+	@include media-breakpoint-only(lg) {
+		margin-top: -4rem;
+	}
+	@include media-breakpoint-up(xl) {
+		margin-top: -5rem;
+	}
 	.card {
+		z-index: 20;
 		.badge.tag-featured {
 			z-index: 3;
 			left: 1rem;

@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=4.0.0",
@@ -55,6 +55,6 @@
     "pump": "^3.0.0"
   },
   "config": {
-    "posts_per_page": 18
+    "posts_per_page": 3
   }
 }
