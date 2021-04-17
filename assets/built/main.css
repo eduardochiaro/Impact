@@ -7441,17 +7441,17 @@ h5 {
 #more .grid {
   display: grid;
   grid-gap: 2rem; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 767.98px) {
     #feed .grid,
     #featured .grid,
     #more .grid {
       grid-template-columns: 1fr; } }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
+  @media (min-width: 768px) and (max-width: 991.98px) {
     #feed .grid,
     #featured .grid,
     #more .grid {
       grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     #feed .grid,
     #featured .grid,
     #more .grid {
@@ -7712,6 +7712,10 @@ h5 {
     #article .article-header .container-fluid h1,
     #tagged .article-header .container-fluid h1 {
       font-size: 4rem; }
+      @media (max-width: 991.98px) {
+        #article .article-header .container-fluid h1,
+        #tagged .article-header .container-fluid h1 {
+          font-size: 2rem; } }
     @media (max-width: 991.98px) {
       #article .article-header .container-fluid h1, #article .article-header .container-fluid p, #article .article-header .container-fluid ul, #article .article-header .container-fluid ol, #article .article-header .container-fluid .article-tag,
       #tagged .article-header .container-fluid h1,
@@ -7938,8 +7942,7 @@ h5 {
     line-height: 1em;
     color: #333333;
     background: #EBE9E4;
-    border-radius: 0.3rem;
-    white-space: nowrap; }
+    border-radius: 0.3rem; }
   #article .article-content pre,
   #tagged .article-content pre {
     overflow: auto;
@@ -7988,8 +7991,8 @@ h5 {
     min-height: 20vh; }
   #more .card.tag-card {
     background-color: #333333; }
-    #more .card.tag-card img {
-      height: 100%;
+    #more .card.tag-card .card-img {
+      height: 400px;
       width: auto;
       -o-object-fit: cover;
          object-fit: cover;

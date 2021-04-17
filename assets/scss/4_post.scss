@@ -69,6 +69,9 @@
 			}
 			h1 {
 				font-size: 4rem;
+				@include media-breakpoint-down(md) {
+					font-size: 2rem;
+				}
 			}
 			h1, p, ul, ol, .article-tag{
 				@include media-breakpoint-down(md) {
@@ -190,7 +193,7 @@
 			color: $darkgrey;
 			background: $platinum;
 			border-radius: 0.3rem;
-			white-space: nowrap;
+			//white-space: nowrap;
 		}
 
 		pre {
@@ -246,8 +249,8 @@
 		}
 		&.tag-card {
 			background-color: $darkgrey;
-			img {
-				height: 100%;
+			.card-img {
+				height: 400px;
 				width: auto;
 				object-fit: cover;
 				filter: brightness(0.6);

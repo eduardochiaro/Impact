@@ -9,13 +9,13 @@
 	.grid {
 		display: grid;
 		grid-gap: 2rem;
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(sm) {
 			grid-template-columns: 1fr;
 		}
-		@include media-breakpoint-only(lg) {
+		@include media-breakpoint-only(md) {
 			grid-template-columns: 1fr 1fr;
 		}
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(lg) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
