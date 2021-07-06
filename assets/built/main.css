@@ -7941,18 +7941,43 @@ h5 {
     font-size: 0.9em;
     line-height: 1em;
     color: #333333;
-    background: #EBE9E4;
+    background: #f8f8f2;
     border-radius: 0.3rem; }
   #article .article-content pre,
   #tagged .article-content pre {
     overflow: auto;
-    padding: 16px 20px;
-    color: #EBE9E4;
+    padding: 2em 1em 1em;
+    color: #f8f8f2;
     font-size: 1rem;
     line-height: 1.5em;
-    background: #333333;
+    background: #282a36;
     border-radius: 0.3rem;
-    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4); }
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
+    background-image: url(/assets/images/status.png);
+    background-position: 12px 7px;
+    background-repeat: no-repeat; }
+    #article .article-content pre code,
+    #tagged .article-content pre code {
+      counter-reset: line-numbering;
+      padding: 0 !important; }
+      #article .article-content pre code .line::before,
+      #tagged .article-content pre code .line::before {
+        content: counter(line-numbering);
+        counter-increment: line-numbering;
+        padding-right: .8em;
+        /* space after numbers */
+        margin-right: 5px;
+        width: 30px;
+        text-align: right;
+        opacity: 0.3;
+        display: inline-block; }
+
+#article .pre-button,
+#tagged .pre-button {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: #f05230; }
 
 #article .kg-card + :not(.kg-card),
 #tagged .kg-card + :not(.kg-card) {

@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=4.0.0",
@@ -48,7 +48,7 @@
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "livereload": "^0.9.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "~4.14.1",
     "open": "^8.0.3",
     "postcss": "^8.2.8",
     "postcss-color-mod-function": "^3.0.3",
