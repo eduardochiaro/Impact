@@ -211,6 +211,7 @@
 			code {
 				counter-reset: line-numbering;
 				padding: 0 !important;
+				background: none !important;
 				.line::before {
 					content: counter(line-numbering);
 					counter-increment: line-numbering;

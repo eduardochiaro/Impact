@@ -7959,7 +7959,8 @@ h5 {
     #article .article-content pre code,
     #tagged .article-content pre code {
       counter-reset: line-numbering;
-      padding: 0 !important; }
+      padding: 0 !important;
+      background: none !important; }
       #article .article-content pre code .line::before,
       #tagged .article-content pre code .line::before {
         content: counter(line-numbering);
