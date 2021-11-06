@@ -33,7 +33,6 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					{{navigation}}
 					<div id="navbarIcons" class="d-flex">
-
 						{{#if @site.facebook}}
 						<a href="{{facebook_url @site.facebook}}" class="icon mr-4">{{> "icons/facebook"}}</a>
 						{{/if}}
@@ -42,6 +41,9 @@
 						{{/if}}
 						<a href="{{@site.url}}/rss/" class="icon mr-4">{{> "icons/rss"}}</a>
 
+						{{#if @custom.login_header_link}}
+							{{> "login-button"}}
+						{{/if}}
 					</div>
 				</div>
 			</div>

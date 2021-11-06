@@ -66,12 +66,14 @@
     {{content}}
 	</section>
 </article>
-
+{{#if @custom.subscribe_post_banner}}
+	{{> "subscribe-banner"}}
+{{else}}
 	{{> "subscribe-none"}}
+{{/if}}
 
 <section id="more">
 	<aside class="container grid">
-
 		{{#if primary_tag}}
 		{{#primary_tag}}
 		<div class="card mt-2 tag-card text-white">

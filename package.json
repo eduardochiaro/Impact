@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=4.0.0",
@@ -55,6 +55,27 @@
     "pump": "^3.0.0"
   },
   "config": {
-    "posts_per_page": 9
+    "posts_per_page": 9,
+    "custom": {
+      "subscribe_homepage_banner": {
+        "type": "boolean",
+        "default": false,
+        "group": "homepage"
+      },
+      "subscribe_homepage_text": {
+        "type": "text",
+        "default": "Sign up now to get access members-only posts.",
+        "group": "homepage"
+      },
+      "subscribe_post_banner": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "login_header_link": {
+        "type": "boolean",
+        "default": false
+      }
+    }
   }
 }
