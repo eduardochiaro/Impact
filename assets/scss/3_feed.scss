@@ -8,14 +8,16 @@
 #more {
 	.grid {
 		display: grid;
-		grid-gap: 2rem;
-		@include media-breakpoint-down(sm) {
+    grid-row-gap: 1.7rem;
+    grid-column-gap: 1.7rem;
+		@include media-breakpoint-down(xs) {
 			grid-template-columns: 1fr;
+			grid-gap: 0rem;
 		}
-		@include media-breakpoint-only(md) {
+		@include media-breakpoint-only(sm) {
 			grid-template-columns: 1fr 1fr;
 		}
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
@@ -23,11 +25,17 @@
 		//min-height: 350px;
 		overflow: auto;
 		border-radius: 0.3rem;
-		transition: all .2s ease-in-out;
-		&:hover {
-			box-shadow: 0 18px 32px -18px $darkgrey;
-			-webkit-transform: translateY(-0.5rem);
-			transform: translateY(-0.5rem);
+		@include media-breakpoint-down(xs) {
+			border-radius: 0;
+			border-top: 3px solid var(--ghost-accent-color) ;
+		}
+		@include media-breakpoint-up(sm) {
+			transition: all .2s ease-in-out;
+			&:hover {
+				box-shadow: 0 18px 32px -18px $darkgrey;
+				-webkit-transform: translateY(-0.5rem);
+				transform: translateY(-0.5rem);
+			}
 		}
 		.card-image-top {
 			width: 100%;

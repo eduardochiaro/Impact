@@ -165,6 +165,9 @@
 			}
 			@include containerReplace();
 		}
+		hr {
+			margin: 3rem;
+		}
 		> p, > pre, > figure, > blockquote, > ol, > ul, > hr {
 			@include containerReplace();
 		}

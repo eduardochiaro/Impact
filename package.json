@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=4.0.0",
@@ -76,6 +76,10 @@
       "login_header_link": {
         "type": "boolean",
         "default": false
+      },
+      "show_author": {
+        "type": "boolean",
+        "default": true
       }
     }
   }

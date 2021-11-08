@@ -34,8 +34,10 @@
 				{{#if custom_excerpt}}
 				<p class="d-block">{{custom_excerpt}}</p>
 				{{/if}}
+
 				<div class="article-byline">
 					<section class="article-byline-content">
+						{{#if @custom.show_author}}
 						<div class="row author-list">
 							<div class="col-auto">
 							{{#foreach authors}}
@@ -56,6 +58,16 @@
 									</div>
 							</div>
 						</div>
+						{{else}}
+						<div class="row author-list">
+							<div class="col article-byline-meta">
+									<div class="byline-meta-content">
+											<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+											<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+									</div>
+							</div>
+						</div>
+						{{/if}}
 					</section>
         </div>
 			</div>

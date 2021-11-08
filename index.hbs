@@ -20,18 +20,17 @@
 </div>
 {{/if}}
 
-<div class="container pb-4">
-
+<div class="container p-0 pb-4">
 	{{#get "posts" include="tags,authors" filter="featured:true" limit="1" as |featured|}}
 		{{#if featured}}
-		<div id="featured" class="pt-2">
+		<div id="featured" class="mx-n3 mx-sm-0 pt-2">
 			{{#foreach featured}}
 				{{> "post-card-featured"}}
 			{{/foreach}}
 		</div>
 		{{/if}}
 	{{/get}}
-		<div id="feed" class="post-feed pt-3">
+		<div id="feed" class="post-feed mx-n3 mx-sm-0 pt-sm-4 pt-0">
 			<div class="grid">
 			{{#foreach posts}}
 				{{> "post-card"}}
