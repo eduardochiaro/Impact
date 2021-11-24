@@ -57,6 +57,7 @@ function zipper(done) {
 	return gulp.src([
 					'**',
 					'!node_modules', '!node_modules/**',
+					'!designs', '!designs/**',
 					'!dist', '!dist/**',
 					'!yarn-error.log'
 			])
