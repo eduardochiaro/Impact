@@ -107,7 +107,7 @@
 		</div>
 		{{/primary_tag}}
 		{{/if}}
-		{{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
+		{{#get "posts" filter="id:-{{comment_id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
 			{{#if more_posts}}
 				{{#foreach more_posts}}
 					{{> "post-card"}}

@@ -3,16 +3,17 @@ const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');    
 const browserSync = require('browser-sync').create();
-const util = require('gulp-util');
+var noop = require("gulp-noop");
+const argv = require('minimist')(process.argv.slice(2));
 const zip = require('gulp-zip');
 
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const size = require('gulp-filesize');
+//const size = require('gulp-filesize');
 
 const config = {
-	production: !!util.env.production
+	production: !!argv.production
 };
 
 //compile scss into css
@@ -25,7 +26,7 @@ function css() {
 			cssnano()
 		]) : postcss([autoprefixer()]))
     .pipe(gulp.dest('./assets/built'))
-		.pipe(size()) 
+		//.pipe(size()) 
     .pipe(browserSync.stream());
 }
 
@@ -33,9 +34,9 @@ function css() {
 function js() {
   return gulp.src('./assets/js/*.js')
 		.pipe(concat('main.js'))
-		.pipe(config.production ? uglify() : util.noop())
+		.pipe(config.production ? uglify() : noop())
     .pipe(gulp.dest('./assets/built'))
-		.pipe(size()) 
+		//.pipe(size()) 
     .pipe(browserSync.stream());
 }
 
