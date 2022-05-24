@@ -1,10 +1,9 @@
 {
   "name": "impact",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Ghost blogging theme",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=5.0.0"
   },
   "license": "MIT",
   "author": {
