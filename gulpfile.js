@@ -18,13 +18,18 @@ const config = {
 
 //compile scss into css
 function css() {
+  const tailwindcss = require('tailwindcss'); 
   return gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(concat('main.css'))
 		.pipe(config.production ? postcss([
+      tailwindcss("./tailwind.config.js"),
 			autoprefixer(),
 			cssnano()
-		]) : postcss([autoprefixer()]))
+		]) : postcss([
+      tailwindcss("./tailwind.config.js"),
+			autoprefixer()
+		]))
     .pipe(gulp.dest('./assets/built'))
 		//.pipe(size()) 
     .pipe(browserSync.stream());
@@ -66,10 +71,11 @@ function zipper(done) {
 			.pipe(gulp.dest('dist/'));
 }
 
+const hbsWatcher = () => gulp.watch('./**/*.hbs', css);
 const cssWatcher = () => gulp.watch('./assets/scss/**', css);
 const jsWatcher = () => gulp.watch('./assets/js/**/*.js', js);
 
-const watcher = gulp.parallel(cssWatcher, jsWatcher);
+const watcher = gulp.parallel(cssWatcher, jsWatcher, hbsWatcher);
 const designW = gulp.parallel(cssWatcher, jsWatcher, design);
 const build = gulp.series(css, js);
 

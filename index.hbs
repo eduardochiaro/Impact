@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#if @site.cover_image}}
-<div id="hero" class="jumbotron jumbotron-fluid">
+<div id="hero" class="w-full relative z-0">
 	<div class="hero-image">
 		<img class="site-header-cover"
 				srcset="{{img_url @site.cover_image size="s"}} 300w,
@@ -13,35 +13,32 @@
 				alt=""
 		/>
 	</div>
-	<div class="container text-center position-relative my-5">
-		<h1 class="pt-5">{{@site.title}}</h1>
-		<p class="d-block">{{@site.description}}</p>
+	<div class="text-center relative pt-32 pb-56 z-10">
+		<h1 class="text-8xl">{{@site.title}}</h1>
+		<p class="text-2xl pt-5">{{@site.description}}</p>
 	</div>
 </div>
 {{/if}}
 
-<div class="container p-0 pb-4">
+<div class="container max-w-6xl mx-auto relative">
 	{{#get "posts" include="tags,authors" filter="featured:true" limit="1" as |featured|}}
 		{{#if featured}}
-		<div id="featured" class="mx-n3 mx-sm-0 pt-2">
+		<div id="featured" class="-mt-32">
 			{{#foreach featured}}
 				{{> "post-card-featured"}}
 			{{/foreach}}
 		</div>
 		{{/if}}
 	{{/get}}
-		<div id="feed" class="post-feed mx-n3 mx-sm-0 pt-sm-4 pt-0">
-			<div class="grid">
-			{{#foreach posts}}
-				{{> "post-card"}}
-			{{/foreach}}
-			</div>
+	<div id="feed" class="post-feed pt-0">
+		<div class="grid md:grid-cols-3 feed">
+		{{#foreach posts}}
+			{{> "post-card"}}
+		{{/foreach}}
 		</div>
-		<div class="row">
-			<div class="col-12 text-center pt-5">
-				<button type="button" class="btn btn-lg btn-primary load-next-page">Load the next {{ @config.posts_per_page}} articles</button>
-			</div>
-		</div>
+	</div>
+	<div class="text-center py-10">
+		<button type="button" class="font-header text-xl px-4 py-2 rounded btn-primary load-next-page">Load the next {{ @config.posts_per_page}} articles</button>
 	</div>
 </div>
 {{#if @custom.subscribe_homepage_banner}}

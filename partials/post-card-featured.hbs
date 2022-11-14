@@ -1,10 +1,10 @@
 <article class="card {{post_class}}">
-	<div class="row no-gutters">
+	<div class="grid grid-cols-3 gap-1">
     {{#if feature_image}}
-		<div class="col-md-8">
-			<a href="{{url}}" class="d-block card-image-link">
-				<span class="card-tag badge badge-warning tag-featured px-3 py-2">
-					<span class="icon-inline baseline mr-1">{{> "icons/star"}}</span> Featured
+		<div class="col-span-2 relative">
+			<a href="{{url}}" class="block card-image-link">
+				<span class="card-tag bg-amber-400 tag-featured rounded absolute top-4 left-0 uppercase font-header text-sm tracking-wider font-bold flex items-center gap-2  px-3 py-2">
+					{{> "icons/star"}} Featured
 				</span>
 				<img class="card-image-top"
 					srcset="{{img_url feature_image size="s"}} 300w,
@@ -19,34 +19,33 @@
 				</a>
 		</div>
     {{/if}}			
-		<div class="col-md-4">
+		<div class="col-span-1 relative mr-4">
 			<a href="{{url}}">
 				<div class="card-body">
+					<div class="flex flex-row-reverse">
 					{{#if primary_tag}}
 					{{#primary_tag}}
-					<span class="card-tag badge badge-primary px-3 py-2 float-right" style="background-color: {{accent_color}};">{{name}}</span>
+					<span class="card-tag badge px-3 py-2" style="background-color: {{accent_color}};">{{name}}</span>
 					{{/primary_tag}}
 					{{/if}}
+					</div>
 					<h5 class="card-title mb-3 mt-5">{{title}}</h5>
 					<p class="card-text card-excerpt">{{excerpt characters="340"}}</p>				
 				</div>
 			</a>
 			<div class="card-footer">
-				<div class="row">
-					<div class="col-auto">
+				<div class="flex items-center">
+					<div class="flex-auto">
 						<p class="card-text pt-2"><small class="text-muted"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="mx-2"></span> {{reading_time}}</small></p>
 					</div>
-					<div class="col text-right reset-inline">
 						{{#if @custom.show_author}}
 						{{#foreach authors}}
-						<a href="{url}}" class="card-author d-inline-block" data-toggle="tooltip" aria-label="{{name}}" title="Posted by {{name}}">
+						<a href="{{url}}" class="card-author flex-none" data-toggle="tooltip" aria-label="{{name}}" title="Posted by {{name}}">
 							<div style="background-image: url({{img_url profile_image size="xs"}}?s=250&amp;d=mm&amp;r=x);"></div>
 						</a>
 						{{/foreach}}
 						{{/if}}
-					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>

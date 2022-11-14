@@ -1,8 +1,5 @@
 @import "./components/variables";
 @import "./components/mixins";
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
 
 #article,
 #tagged {
@@ -46,15 +43,6 @@
     	opacity: 1;
 			transform: translateZ(0);
 			z-index: 2;
-			@include media-breakpoint-down(md) {
-				padding-top: 4rem;
-			}
-			@include media-breakpoint-only(lg) {
-				padding-top: 10rem;
-			}
-			@include media-breakpoint-up(xl) {
-				padding-top: 20rem;
-			}
 			a {
 				color: $white;
 			}
@@ -69,20 +57,10 @@
 			}
 			h1 {
 				font-size: 4rem;
-				@include media-breakpoint-down(md) {
-					font-size: 2rem;
-				}
+
 			}
 			h1, p, ul, ol, .article-tag{
-				@include media-breakpoint-down(md) {
-					padding: 1rem 1rem 0;
-				}
-				@include media-breakpoint-only(lg) {
-					padding: 1rem 3rem 0;
-				}
-				@include media-breakpoint-up(xl) {
-					padding: 1rem 6rem 0 ;
-				}
+
 			}
 			.badge-primary {
 				background-color: var(--ghost-accent-color);
@@ -98,15 +76,7 @@
 			}
 			.article-byline {
 				font-family: $header-font;
-				@include media-breakpoint-down(md) {
-					padding: 1rem 1rem 0;
-				}
-				@include media-breakpoint-only(lg) {
-					padding: 1rem 3rem 0;
-				}
-				@include media-breakpoint-up(xl) {
-					padding: 1rem 6rem 0 ;
-				}
+
 				.author-list {
 					list-style: none;
 					margin-left: 0;

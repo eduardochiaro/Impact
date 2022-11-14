@@ -1,83 +1,44 @@
-@import "./components/variables.scss";
-@import "./components/mixins.scss";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-	color: $darkgrey;
-	font-family: $system-font;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	font-style: normal;
-	letter-spacing: 0;
-	text-rendering: optimizeLegibility;
-	background: $white;
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-moz-font-feature-settings: "liga" on;
-	&.home-template {
-		background: $platinum;
-	}
-	&.author-template {
-		background: $platinum;
+	@apply font-normal text-primary-900 text-base leading-4 bg-primary-300;
+	&.home-templatem,
+	&.author-template  {
+		@apply bg-primary-300;
 	}
 }
 h1, h2, h3, h4, h5 {
-	font-family: $header-font;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-h1 {
-	font-size: 6rem;
-	letter-spacing: 0.5rem;
-}
-h2 {
-	font-size: 2rem;
-	letter-spacing: 0.45rem;
-}
-h3 {
-	font-size: 1.5rem;
-	letter-spacing: 0.40rem;
-}
-h4 {
-	font-size: 1.3rem;
-	letter-spacing: 0.30rem;
-}
-h5 {
-	font-size: 1.2rem;
-	letter-spacing: 0.1rem;
-}
-
-.reset-inline {
-	word-spacing: 0;
-	letter-spacing: 0;
-	font-size: 0;
+	@apply font-header font-bold uppercase;
 }
 
 /*SVG ICON SYSTEM*/
 .icon-inline {
-	display: inline-flex;
-	align-self: center;
+	@apply inline-flex self-center;
 }
 
 .icon-inline svg, .icon-inline img {
-	height: 1em;
-	width: 1em;
+	@apply w-4 h-4;
 	fill: currentColor;
 }
 
 .icon-inline.baseline svg, .icon-inline img {
-	top: .125em;
+	@apply top-1;
 	position: relative;
 }
 
 //BTN
-
 .btn-primary {
+	@apply text-primary-50;
 	background-color: var(--ghost-accent-color) !important; 
 	border-color: var(--ghost-accent-color) !important;
 	&:hover {
 		filter: brightness(0.8);
 	}
+}
+
+.badge {
+	@apply rounded uppercase font-header text-sm tracking-wider font-bold text-primary-50;
+	background-color: var(--ghost-accent-color); 
 }

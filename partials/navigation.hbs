@@ -1,5 +1,5 @@
 {{#if isSecondary}}
-<ul class="nav">
+<ul class="flex items-center gap-4">
   {{#foreach navigation}}
 	<li class="nav-item nav-{{slug}}">
 		<a href="{{url}}" class="nav-link">{{label}}</a>
@@ -7,7 +7,7 @@
 	{{/foreach}}
 </ul>
 {{else}}
-<ul class="navbar-nav mr-auto">
+<ul class="flex items-center gap-4">
   {{#foreach navigation}}
 	<li class="nav-item nav-{{slug}}{{#if current}} active{{/if}}">
 		<a class="nav-link" href="{{url absolute="true"}}">{{label}}

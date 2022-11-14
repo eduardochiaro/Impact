@@ -1,7 +1,3 @@
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
-
 @mixin transparent-background($background: #333333, $opacity: 0.6) {
 	position: relative;
 	z-index: 0;
@@ -95,10 +91,4 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
-      max-width: calc(#{$container-max-width} - 6rem );
-    }
-  }
 }

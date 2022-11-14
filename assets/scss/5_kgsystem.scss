@@ -1,7 +1,4 @@
 @import "./components/variables.scss";
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
 
 .kg-image-card {
 	img {
@@ -15,19 +12,6 @@
     width: calc(100% + 12rem);
     margin-left: -6rem;
 		height: auto;
-
-		@include media-breakpoint-down(md) {
-			width: calc(100% + 2rem);
-			margin-left: -1rem;
-		}
-		@include media-breakpoint-only(lg) {
-			width: calc(100% + 12rem);
-			margin-left: -6rem;
-		}
-		@include media-breakpoint-up(xl) {
-			width: calc(100% + 12rem);
-			margin-left: -6rem;
-		}
 	}
 	.kg-gallery-container {
 		img {
@@ -38,18 +22,6 @@
 				-webkit-transform: translateY(-0.5rem);
 				transform: translateY(-0.5rem);
 			}
-		}
-
-		@include media-breakpoint-down(md) {
-			margin-left: 0;
-			margin-right: 0;
-		}
-		@include media-breakpoint-only(lg) {
-			padding-top: 10rem;
-		}
-		@include media-breakpoint-up(xl) {
-			margin-left: -6rem;
-			margin-right: -6rem;
 		}
 	}
 }
