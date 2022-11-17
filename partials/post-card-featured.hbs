@@ -3,7 +3,7 @@
     {{#if feature_image}}
 		<div class="col-span-2 relative">
 			<a href="{{url}}" class="block card-image-link">
-				<span class="card-tag bg-amber-400 tag-featured rounded absolute top-4 left-0 uppercase font-header text-sm tracking-wider font-bold flex items-center gap-2  px-3 py-2">
+				<span class="card-tag badge tag-featured absolute top-4 left-0 flex items-center gap-2">
 					{{> "icons/star"}} Featured
 				</span>
 				<img class="card-image-top"
@@ -25,7 +25,7 @@
 					<div class="flex flex-row-reverse">
 					{{#if primary_tag}}
 					{{#primary_tag}}
-					<span class="card-tag badge px-3 py-2" style="background-color: {{accent_color}};">{{name}}</span>
+					<span class="card-tag badge" style="background-color: {{accent_color}};">{{name}}</span>
 					{{/primary_tag}}
 					{{/if}}
 					</div>

@@ -23,7 +23,7 @@ body {
 					}
 				}
 				.btn {
-					@apply text-primary-400 hover:text-primary-700 tracking-widest uppercase font-medium text-sm;
+					@apply bg-transparent text-primary-400 hover:text-primary-700 tracking-widest uppercase font-medium text-sm p-0;
 				}
 			}
 		}

@@ -27,7 +27,7 @@
 		.card-author {
 			@apply w-6 h-6 overflow-hidden relative; 
 			div {
-				@apply w-full h-full bg-primary-50 bg-no-repeat bg-cover rounded-full border border-primary-400;
+				@apply w-full h-full bg-primary-50 bg-no-repeat bg-cover rounded-full border border-primary-300;
 			}
 			&:hover {
 				@apply z-20;
@@ -84,9 +84,9 @@
 
 #featured {
 	.card {
-		@apply bg-primary-100 rounded z-20 mb-10 drop-shadow border border-primary-50;
+		@apply bg-primary-100 rounded z-20 mb-10 drop-shadow border-2 border-primary-50;
 		.tag-featured {
-			@apply z-10 left-4 right-auto; 
+			@apply z-10 left-4 right-auto bg-amber-400 text-primary-800; 
 			svg {
 				@apply w-4 h-4;
 			}
@@ -99,7 +99,7 @@
 			min-height: 380px;
 		}
 		.card-image-top {
-			@apply absolute w-full h-full;
+			@apply absolute w-full h-full rounded;
 
 		}
 		.card-body {

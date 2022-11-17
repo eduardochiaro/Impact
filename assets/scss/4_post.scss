@@ -212,28 +212,12 @@
 	}	
 }
 #subscribe {
-	background-color: $black-coral;
-	color: $white;
-	margin: 0 -15px;
-	padding: 3rem 0;
+	@apply bg-slate-500 text-primary-50 py-12;
 	h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
+		@apply text-4xl;
 	}
 	.subscribe-button {
-		display: inline-block;
-		background-color: $white;
-
-		position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 500px;
-    padding: 5px 5px 5px 15px;
-    font-size: 1.2rem;
-    border-radius: 0.3rem;
-		
+		@apply flex items-center justify-between w-full max-w-lg p-1 pl-3 text-xl rounded bg-primary-50 text-primary-800 relative mx-auto;
 	}
 }
 #more {

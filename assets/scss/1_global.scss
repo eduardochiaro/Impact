@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5 {
 }
 
 //BTN
+.btn {
+	@apply bg-primary-500 hover:bg-primary-700 text-primary-50 text-sm font-bold py-2 px-4 rounded;
+}
+
 .btn-primary {
 	@apply text-primary-50;
 	background-color: var(--ghost-accent-color) !important; 
@@ -39,6 +43,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .badge {
-	@apply rounded uppercase font-header text-sm tracking-wider font-bold text-primary-50;
+	@apply rounded uppercase font-header text-xs tracking-wider font-bold text-primary-50 px-3 py-2 ;
 	background-color: var(--ghost-accent-color); 
 }

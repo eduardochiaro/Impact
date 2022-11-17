@@ -586,8 +586,8 @@ video {
 .mb-3 {
   margin-bottom: 0.75rem;
 }
-.mb-0 {
-  margin-bottom: 0px;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .block {
   display: block;
@@ -643,10 +643,6 @@ video {
 .bg-primary-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
-}
-.bg-amber-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 .p-0 {
   padding: 0px;
@@ -725,21 +721,8 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
 .font-semibold {
   font-weight: 600;
-}
-.font-bold {
-  font-weight: 700;
-}
-.uppercase {
-  text-transform: uppercase;
-}
-.tracking-wider {
-  letter-spacing: 0.05em;
 }
 .drop-shadow-xl {
   --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
@@ -786,6 +769,26 @@ h1, h2, h3, h4, h5 {
   position: relative;
 }
 
+.btn {
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(120 113 108 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 249 / var(--tw-text-opacity));
+}
+
+.btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(68 64 60 / var(--tw-bg-opacity));
+}
+
 .btn-primary {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
@@ -798,9 +801,13 @@ h1, h2, h3, h4, h5 {
 
 .badge {
   border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -849,6 +856,8 @@ body > #navigation #header #navbarIcons .icon svg:hover {
   filter: brightness(0.8);
 }
 body > #navigation #header #navbarIcons .btn {
+  background-color: transparent;
+  padding: 0px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -975,7 +984,7 @@ body > #footer .copyright {
   border-radius: 9999px;
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(168 162 158 / var(--tw-border-opacity));
+  border-color: rgb(214 211 209 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
   background-size: cover;
@@ -1061,7 +1070,7 @@ body > #footer .copyright {
   z-index: 20;
   margin-bottom: 2.5rem;
   border-radius: 0.25rem;
-  border-width: 1px;
+  border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(250 250 249 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -1073,6 +1082,10 @@ body > #footer .copyright {
   left: 1rem;
   right: auto;
   z-index: 10;
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 #featured .card .tag-featured svg {
   height: 1rem;
@@ -1090,6 +1103,7 @@ body > #footer .copyright {
   position: absolute;
   height: 100%;
   width: 100%;
+  border-radius: 0.25rem;
 }
 #featured .card .card-body .card-excerpt {
   -webkit-line-clamp: 6;
@@ -1368,27 +1382,35 @@ body > #footer .copyright {
 }
 
 #subscribe {
-  background-color: #696d7d;
-  color: #ffffff;
-  margin: 0 -15px;
-  padding: 3rem 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 249 / var(--tw-text-opacity));
 }
 #subscribe h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 #subscribe .subscribe-button {
-  display: inline-block;
-  background-color: #ffffff;
   position: relative;
-  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 32rem;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 500px;
-  padding: 5px 5px 5px 15px;
-  font-size: 1.2rem;
-  border-radius: 0.3rem;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
 #more {

@@ -1,5 +1,5 @@
-;(function( $ ){
-  $('[data-toggle="tooltip"]').tooltip();
+(function( $ ){
+  
 })( window.jQuery );
 /* eslint-env browser */
 

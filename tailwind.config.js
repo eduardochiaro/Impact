@@ -5,7 +5,10 @@ module.exports = {
   content: ["./**/*.hbs"],
   theme: {
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
       amber: colors.amber,
+      slate: colors.slate,
       primary: colors.stone
     },
     fontFamily: {
