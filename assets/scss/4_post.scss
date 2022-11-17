@@ -177,10 +177,7 @@
 			.card-img-overlay {
 				@apply bg-gradient-to-t from-primary-700 to-transparent absolute top-0 right-0 left-0 bottom-0 p-5 rounded;
 				span {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-				}
+					@apply absolute left-0 bottom-0;
 			}
 		}
 	}
