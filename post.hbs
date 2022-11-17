@@ -2,11 +2,11 @@
 
 {{#post}}
 
-<article id="article" class="article {{post_class}}">
+<article id="article" class="article bg-primary-50 {{post_class}}">
 
 	<header class="article-header">
 
-		<div class="jumbotron jumbotron-fluid">
+		<div class="max-w-screen bg-slate-500 rounded-lg py-12 text-left">
 
 		{{#if feature_image}}
 			<figure class="article-image">
@@ -21,28 +21,28 @@
 				/>
 			</figure>
 		{{/if}}
-			<div class="container-fluid position-relative mt-5">
+			<div class="w-full py-4 mx-auto relative mt-12 z-10 article-header-content">
 
 				{{#if primary_tag}}
 				{{#primary_tag}}
 				<section class="article-tag">
-					<a class="badge badge-primary px-3 py-2" href="{{url}}" style="background-color: {{accent_color}};">{{name}}</a>
+					<a class="badge badge-primary" href="{{url}}" style="background-color: {{accent_color}};">{{name}}</a>
 				</section>
 				{{/primary_tag}}
 				{{/if}}
 				<h1>{{title}}</h1>
 				{{#if custom_excerpt}}
-				<p class="d-block">{{custom_excerpt}}</p>
+				<p class="block">{{custom_excerpt}}</p>
 				{{/if}}
 
 				<div class="article-byline">
 					<section class="article-byline-content">
 						{{#if @custom.show_author}}
-						<div class="row author-list">
-							<div class="col-auto">
+						<div class="flex items-center author-list gap-6">
+							<div class="authors w-16 h-16">
 							{{#foreach authors}}
 								{{#if profile_image}}
-								<a href="{{url}}" class="author-avatar d-inline-block">
+								<a href="{{url}}" class="author-avatar">
 									<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
 								</a>
 								{{else}}
@@ -50,12 +50,12 @@
 								{{/if}}
 							{{/foreach}}
 							</div>
-							<div class="col article-byline-meta">
-								<h4 class="author-name">{{authors}}</h4>
-									<div class="byline-meta-content">
-											<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-											<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
-									</div>
+							<div class="article-byline-meta">
+								<h4 class="author-name text-xl tracking-widest mb-5">{{authors}}</h4>
+								<div class="byline-meta-content">
+										<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+										<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+								</div>
 							</div>
 						</div>
 						{{else}}
@@ -74,7 +74,7 @@
 		</div>
 	</header>
 
-	<section class="article-content py-md-5">
+	<section class="article-content container max-w-6xl mx-auto relative md:py-20">
     {{content}}
 	</section>
 </article>
@@ -85,18 +85,18 @@
 {{/if}}
 
 <section id="more">
-	<aside class="container grid">
+	<aside class="container max-w-6xl mx-auto relative grid md:grid-cols-3">
 		{{#if primary_tag}}
 		{{#primary_tag}}
-		<div class="card mt-2 tag-card text-white">
+		<div class="card tag-card text-primary-50">
 			<img src="{{feature_image}}" class="card-img" alt="">
 			<div class="card-img-overlay">
-				<a href="{{url}}" class="text-white">
-					<div class="h-100 position-relative">
+				<a href="{{url}}" class="text-primary-50">
+					<div class="h-full relative">
 						<h5 class="card-title">{{name}}</h5>
 						<p class="card-text">{{description}}</p>
 
-						<span class="btn btn-light w-100">
+						<span class="btn btn-light w-full">
 						{{#get "posts" filter="tag:{{slug}}" limit="all" as |all_in_tags pages|}}
 							{{pages.total}} {{plural pages.total empty="" singular="article" plural="articles"}} &raquo;
 						{{/get}}
