@@ -1,6 +1,3 @@
-@import "./components/variables";
-@import "./components/mixins";
-
 .article,
 #tagged {
 	&.no-image { 
@@ -88,11 +85,10 @@
 		@apply text-xl leading-8;
 		h1, h2, h3 ,h4 ,h5 ,h6 {
 			color: var(--ghost-accent-color);
-			@apply m-2 mt-8;
+			@apply m-2 mt-8 mx-auto w-full;
 			&:before {
 				content: '> ';
 			}
-			@include containerReplace();
 		}
 		h3 {
 			@apply text-2xl tracking-widest;
@@ -104,7 +100,7 @@
 			@apply m-6 text-primary-500;
 		}
 		> p, > pre, > figure, > blockquote, > ol, > ul, > hr {
-			@include containerReplace();
+			@apply mx-auto w-full;
 		}
 		& > blockquote {
 			@apply relative italic p-0; 

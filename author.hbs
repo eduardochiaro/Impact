@@ -1,10 +1,10 @@
 {{!< default}}
 
 <section id="author">
-	<div class="container max-w-6xl mx-auto relative md:pb-20 md:pt-5 flex gap-6">
-		<div class="flex-1 pt-2 ">
+	<div class="container max-w-6xl mx-auto relative md:pb-20 md:pt-5 md:flex gap-6 px-6 md:px-0">
+		<div class="flex-1">
 			{{#author}}
-			<div class="bg-primary-50 w-52 rounded author-card mt-3">
+			<div class="bg-primary-50 md:w-52 rounded author-card mb-6 mx-auto">
 				{{#if profile_image}}
 				<img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
 				{{else}}
@@ -40,8 +40,8 @@
 			{{/author}}
 		</div>
 
-		<div id="feed" class="post-feed pt-3">
-			<div class="grid grid-cols-3">
+		<div id="feed" class="post-feed">
+			<div class="grid md:grid-cols-3 gap-6">
 			{{#foreach posts}}
 				{{> "post-card"}}
 			{{/foreach}}

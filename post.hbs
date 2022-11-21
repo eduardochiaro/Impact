@@ -84,9 +84,9 @@
 	{{> "subscribe-none"}}
 {{/if}}
 
+{{#if primary_tag}}
 <section id="more">
 	<aside class="container max-w-6xl mx-auto relative grid md:grid-cols-3 gap-6">
-		{{#if primary_tag}}
 		{{#primary_tag}}
 		<div class="card tag-card text-primary-50">
 			<img src="{{feature_image}}" class="card-img" alt="">
@@ -106,7 +106,6 @@
 			</div>
 		</div>
 		{{/primary_tag}}
-		{{/if}}
 		{{#get "posts" filter="id:-{{comment_id}}+tag:{{primary_tag.slug}}" include="authors" limit="2" as |more_posts|}}
 			{{#if more_posts}}
 				{{#foreach more_posts}}
@@ -116,5 +115,6 @@
 		{{/get}}
 	</aside>
 </section>
+{{/if}}
 
 {{/post}}

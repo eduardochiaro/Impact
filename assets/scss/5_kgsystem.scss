@@ -1,12 +1,17 @@
-@import "./components/variables.scss";
-
 .article {
 	.article-content {
+		.kg-card {
+			@apply mb-10;
+		}
 		.kg-header-card-header, 
-		.kg-header-card-subheader {
+		.kg-header-card-subheader,
+		.kg-product-card-title {
 			&:before {
 				content: '';
 			}
+		}
+		.kg-product-card-container {
+			@apply drop-shadow border-0 shadow-none bg-primary-100;
 		}
 	} 
 }
@@ -26,10 +31,10 @@
 	}
 	.kg-gallery-container {
 		img {
-			border-radius: 0.3rem;
+			@apply rounded;
 			transition: all .2s ease-in-out;
 			&:hover {
-				box-shadow: 0 18px 32px -18px $darkgrey;
+				@apply drop-shadow;
 				-webkit-transform: translateY(-0.5rem);
 				transform: translateY(-0.5rem);
 			}
@@ -52,13 +57,7 @@
 }
 
 .kg-card figcaption {
-	padding: 1.5rem 1.5rem 0;
-	text-align: center;
-	color: $darkgrey;
-	font-weight: 600;
-	font-size: 1.1rem;
-	line-height: 1.4em;
-	font-family: $header-font;
+	@apply pt-6 pl-6 text-center text-primary-900 text-base font-header;
 }
 .kg-card figcaption strong {
 	color: var(--ghost-accent-color);
@@ -128,7 +127,7 @@ between them, so it looks like 1 big gallery */
 Twitter card. These styles roughly match what you see in the
 Ghost editor. */
 
-#article {
+.article {
 
 	.kg-bookmark-card,
 	.kg-bookmark-publisher {
@@ -156,8 +155,7 @@ Ghost editor. */
 	.kg-bookmark-metadata {
 		@apply flex items-center mt-5 w-auto text-primary-500 text-base;
 		& > span:nth-of-type(2) {
-			color: $black-coral;
-			font-weight: 400;
+			@apply text-primary-700 font-normal;
 		}
 		
 		& > span:nth-of-type(2):before {
@@ -167,7 +165,7 @@ Ghost editor. */
 	}
 
 	.kg-bookmark-icon {
-		@apply w-5 h-20 ml-2;
+		@apply w-5 ml-2;
 	}
 
 	.kg-bookmark-author,
