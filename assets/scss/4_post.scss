@@ -1,7 +1,7 @@
 @import "./components/variables";
 @import "./components/mixins";
 
-#article,
+.article,
 #tagged {
 	&.no-image { 
 		.article-header {
@@ -23,15 +23,15 @@
 			}
 		}
 		.article-header-content {
-			@apply pt-80;
+			@apply md:pt-80;
 			a {
 				@apply text-primary-50;
 			}
 			h1 {
-				@apply text-6xl leading-snug tracking-widest;
+				@apply text-xl md:text-6xl leading-snug tracking-widest;
 			}
-			h1, p, ul, ol, .article-tag{
-				@apply px-24 py-4; 
+			h1, p, ul, ol, .article-tag, .article-byline{
+				@apply px-6 md:px-24 py-4; 
 			}
 			.badge-primary {
 				background-color: var(--ghost-accent-color);
@@ -43,26 +43,19 @@
 				}
 			}
 			p {
-				font-size: 1.2rem;
+				@apply text-lg;
 			}
 			.article-byline {
-				@apply font-header px-24 py-4; 
+				@apply font-header; 
 
 				.author-list {
-					list-style: none;
-					margin-left: 0;
+					@apply list-none ml-0;
 				}
 				.author-avatar {
-					@apply w-16 h-16 overflow-hidden relative;
+					@apply overflow-hidden relative;
 					.author-profile-image {
-						width: 100%;
-						height: 100%;
-						background-color: transparent;
-						background-repeat: no-repeat;
-						background-position: 50%;
-						background-size: cover;
-						border-radius: 50%;
-						border: 3px solid $platinum;
+						
+						@apply w-8 md:w-16 border-2 border-primary-400 rounded-full bg-cover bg-center bg-no-repeat bg-transparent;
 					}
 					&:hover {
 						z-index: 11 !important;
@@ -108,7 +101,7 @@
 			@apply mb-4;
 		}
 		hr {
-			@apply m-12;
+			@apply m-6 text-primary-500;
 		}
 		> p, > pre, > figure, > blockquote, > ol, > ul, > hr {
 			@include containerReplace();
@@ -123,7 +116,7 @@
 		}
 
 		:not(pre) > code {
-			@apply align-middle py-1 px-2 font-normal text-sm leading-4 text-primary-800 rounded bg-primary-200 border border-primary-700 whitespace-nowrap;
+			@apply align-middle py-1 px-2 font-normal text-sm leading-4 text-primary-800 rounded bg-primary-200 border border-primary-700 md:whitespace-nowrap;
 		}
 
 		pre {
@@ -164,7 +157,7 @@
 	}
 }
 #more {
-	@apply pt-12 pb-16 -mx-4 bg-primary-200;
+	@apply pt-12 pb-16 bg-primary-200 px-6 md:px-0;
 	.card {
 		.card-image-top {
 			@apply h-48;
@@ -178,6 +171,7 @@
 				@apply bg-gradient-to-t from-primary-700 to-transparent absolute top-0 right-0 left-0 bottom-0 p-5 rounded;
 				span {
 					@apply absolute left-0 bottom-0;
+				}
 			}
 		}
 	}

@@ -18,7 +18,7 @@ body {
 					svg {
 						fill: var(--ghost-accent-color);
 						&:hover {
-							filter: brightness(0.8);
+							@apply brightness-75;
 						}
 					}
 				}

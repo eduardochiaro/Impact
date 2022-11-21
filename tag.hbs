@@ -2,11 +2,11 @@
 
 {{#tag}}
 
-<section id="tagged" class="tag{{#unless feature_image}} no-image{{/unless}}">
+<section id="tagged" class="tag{{#unless feature_image}} bg-primary-50 no-image{{/unless}}">
 
 	<header class="article-header">
 
-		<div class="jumbotron jumbotron-fluid">
+		<div class="max-w-screen bg-slate-500 rounded-lg py-12 text-left">
 
 		{{#if feature_image}}
 			<figure class="article-image">
@@ -21,7 +21,7 @@
 				/>
 			</figure>
 		{{/if}}
-			<div class="container-fluid position-relative mt-5">
+			<div class="w-full py-4 mx-auto relative mt-12 z-10 article-header-content">
 				<section class="article-tag">
 					<span class="badge badge-primary px-3 py-2" style="background-color: {{accent_color}};">A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}</span>
 				</section>
@@ -36,9 +36,9 @@
 
 {{/tag}}
 
-<div class="container pb-4">
+	<div class="container max-w-6xl mx-auto relative px-5 md:px-0 py-6 md:py-20">
 		<div id="feed" class="post-feed pt-3">
-			<div class="grid">
+			<div class="grid md:grid-cols-3 gap-6">
 			{{#foreach posts}}
 				{{> "post-card"}}
 			{{/foreach}}

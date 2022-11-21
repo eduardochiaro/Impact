@@ -2,11 +2,11 @@
 
 {{#post}}
 
-<article id="article" class="article {{post_class}}">
+<article id="article" class="article bg-primary-50 {{post_class}}">
 
 	<header class="article-header">
 
-		<div class="jumbotron jumbotron-fluid">
+		<div class="max-w-screen bg-slate-500 rounded-lg py-12 text-left">
 
 		{{#if feature_image}}
 			<figure class="article-image">
@@ -21,7 +21,7 @@
 				/>
 			</figure>
 		{{/if}}
-			<div class="container-fluid position-relative mt-5">
+			<div class="w-full py-4 mx-auto relative mt-12 z-10 article-header-content">
 				<h1>{{title}}</h1>
 				{{#if custom_excerpt}}
 				<p class="d-block">{{custom_excerpt}}</p>
@@ -30,7 +30,7 @@
 		</div>
 	</header>
 
-	<section class="article-content py-md-5">
+	<section class="article-content container max-w-6xl mx-auto relative md:py-20">
     {{content}}
 	</section>
 </article>

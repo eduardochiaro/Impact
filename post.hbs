@@ -21,7 +21,7 @@
 				/>
 			</figure>
 		{{/if}}
-			<div class="w-full py-4 mx-auto relative mt-12 z-10 article-header-content">
+			<div class="w-full py-4 mx-auto relative mt-4 md:mt-12 z-10 article-header-content">
 
 				{{#if primary_tag}}
 				{{#primary_tag}}
@@ -39,7 +39,7 @@
 					<section class="article-byline-content">
 						{{#if @custom.show_author}}
 						<div class="flex items-center author-list gap-6">
-							<div class="authors w-16 h-16">
+							<div class="authors">
 							{{#foreach authors}}
 								{{#if profile_image}}
 								<a href="{{url}}" class="author-avatar">
@@ -50,8 +50,8 @@
 								{{/if}}
 							{{/foreach}}
 							</div>
-							<div class="article-byline-meta">
-								<h4 class="author-name text-xl tracking-widest mb-5">{{authors}}</h4>
+							<div class="article-byline-meta grid grid-flow-row gap-4">
+								<h4 class="author-name md:text-xl tracking-widest">{{authors}}</h4>
 								<div class="byline-meta-content">
 										<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
 										<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
@@ -74,7 +74,7 @@
 		</div>
 	</header>
 
-	<section class="article-content container max-w-6xl mx-auto relative md:py-20">
+	<section class="article-content container max-w-6xl mx-auto relative px-6 md:px-0 py-10 md:py-20">
     {{content}}
 	</section>
 </article>
@@ -85,7 +85,7 @@
 {{/if}}
 
 <section id="more">
-	<aside class="container max-w-6xl mx-auto relative grid md:grid-cols-3">
+	<aside class="container max-w-6xl mx-auto relative grid md:grid-cols-3 gap-6">
 		{{#if primary_tag}}
 		{{#primary_tag}}
 		<div class="card tag-card text-primary-50">

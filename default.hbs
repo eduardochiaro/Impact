@@ -10,14 +10,15 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/github-dark.min.css" integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings, it should always be the last tag before the closing head tag --}}
+
+	<link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}">
 	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
-	<section id="navigation" class="absolute top-0 left-0 z-10 w-full">
-		<nav id="header" class="bg-primary-50 rounded py-2 px-6 container mx-auto mt-5 drop-shadow-xl">
+	<section id="navigation" class="absolute top-0 left-0 z-10 w-full px-5 md:p-0">
+		<nav id="header" class="bg-primary-50 rounded py-2 px-6 container mx-auto mt-5 drop-shadow ">
 			<div class="flex items-center gap-2">
 				<a class="font-header font-semibold text-xl" href="{{@site.url}}">
 					{{#if @site.logo}}
@@ -30,7 +31,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="flex-auto" id="navbarResponsive">
-					{{navigation}}
+					<div class="hidden md:block">{{navigation}}</div>		
 				</div>
 				<div id="navbarIcons" class="flex items-center gap-6">
 					{{#if @site.facebook}}
@@ -52,7 +53,7 @@
 		{{{body}}}
 	</section>
 	<footer id="footer">
-		<div class="container max-w-6xl mx-auto">
+		<div class="container max-w-xs md:max-w-6xl mx-auto">
 			<div class="grid grid-cols-2">
 				{{navigation type="secondary"}}
 				<div class="text-right">

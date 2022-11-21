@@ -1,5 +1,16 @@
 @import "./components/variables.scss";
 
+.article {
+	.article-content {
+		.kg-header-card-header, 
+		.kg-header-card-subheader {
+			&:before {
+				content: '';
+			}
+		}
+	} 
+}
+
 .kg-image-card {
 	img {
 		border-radius: 0.3rem;
@@ -117,137 +128,81 @@ between them, so it looks like 1 big gallery */
 Twitter card. These styles roughly match what you see in the
 Ghost editor. */
 
-.kg-bookmark-card,
-.kg-bookmark-publisher {
-	position: relative;
-	width: 100%;
-}
+#article {
 
-.kg-bookmark-container,
-.kg-bookmark-container:hover {
-	display: flex;
-	color: currentColor;
-	font-family: var(--font-sans-serif);
-	text-decoration: none !important;
-	background: $white;
-	border-radius: 0.3rem;
-	border: 1px solid $platinum;
-	overflow: hidden;
-
-	transition: all .2s ease-in-out;
-	&:hover {
-		box-shadow: 0 18px 32px -18px $darkgrey;
-		-webkit-transform: translateY(-0.5rem);
-		transform: translateY(-0.5rem);
-	}
-}
-
-.kg-bookmark-content {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	flex-basis: 100%;
-	align-items: flex-start;
-	justify-content: flex-start;
-	padding: 20px;
-}
-
-.kg-bookmark-title {
-	font-size: 1.3rem;
-	line-height: 1.3em;
-	font-weight: 600;
-	color: $darkgrey;
-}
-
-.kg-bookmark-description {
-	display: -webkit-box;
-	font-size: 1rem;
-	line-height: 1.3rem;
-	margin-top: 3px;
-	color: $black-coral;
-	font-weight: 400;
-	//max-height: 44px;
-	overflow-y: hidden;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-}
-
-.kg-bookmark-metadata {
-	display: flex;
-	align-items: center;
-	margin-top: 22px;
-	width: 100%;
-	color: $midgrey;
-	font-size: 1.1rem;
-	font-weight: 500;
-
-	& > span:nth-of-type(2) {
-		color: $black-coral;
-		font-weight: 400;
-	}
-	
-	& > span:nth-of-type(2):before {
-		content: "•";
-		color: $midgrey;
-		margin: 0 6px;
-	}
-}
-
-.kg-bookmark-icon {
-	width: 20px;
-	height: 20px;
-	margin-right: 6px;
-}
-
-.kg-bookmark-author,
-.kg-bookmark-publisher {
-	display: inline;
-}
-
-.kg-bookmark-publisher {
-	text-overflow: ellipsis;
-	overflow: hidden;
-	max-width: 240px;
-	white-space: nowrap;
-	display: block;
-	line-height: 1.65em;
-}
-
-.kg-bookmark-thumbnail {
-	position: relative;
-	flex-grow: 1;
-	min-width: 33%;
-	img {
+	.kg-bookmark-card,
+	.kg-bookmark-publisher {
+		position: relative;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-		top: 0;
-		left: 0;
-		border-radius: 0 4px 4px 0;
+	}
+
+	.kg-bookmark-container,
+	.kg-bookmark-container:hover {
+		@apply flex font-normal bg-primary-100 rounded overflow-hidden drop-shadow mt-10; 
+	}
+
+	.kg-bookmark-content {
+		@apply p-5;  
+	}
+
+	.kg-bookmark-title {
+		@apply font-header text-xl;
+	}
+
+	.kg-bookmark-description {
+		@apply text-base;
+	}
+
+	.kg-bookmark-metadata {
+		@apply flex items-center mt-5 w-auto text-primary-500 text-base;
+		& > span:nth-of-type(2) {
+			color: $black-coral;
+			font-weight: 400;
+		}
+		
+		& > span:nth-of-type(2):before {
+			content: "•";
+			@apply text-primary-500 mx-2;
+		}
+	}
+
+	.kg-bookmark-icon {
+		@apply w-5 h-20 ml-2;
+	}
+
+	.kg-bookmark-author,
+	.kg-bookmark-publisher {
+		@apply inline;
+	}
+
+	.kg-bookmark-publisher {
+		@apply text-ellipsis overflow-hidden max-w-xs whitespace-nowrap block leading-7;
+	}
+
+	.kg-bookmark-thumbnail {
+		min-width: 33%;
+		@apply relative flex-grow;
+		img {
+			@apply w-full h-full object-cover absolute top-0 left-0 rounded-l rounded-b;
+		}
 	}
 }
+
 
 
 /* Card captions
 /* ---------------------------------------------------------- */
 
 .kg-width-full.kg-card-hascaption {
-	display: grid;
-	grid-template-columns: inherit; 
+	@apply grid;
 }
 
 .fluid-width-video-wrapper {
-	position: relative;
-	overflow: hidden;
+	@apply relative overflow-hidden;
 	padding-top: 56.25%;
 	iframe,
 	object,
 	embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		@apply absolute top-0 left-0 w-full h-full;
 	}
 }

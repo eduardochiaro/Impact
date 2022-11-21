@@ -3,17 +3,11 @@
 #feed,
 #featured,
 #more {
-	.grid {
-		display: grid;
-    grid-row-gap: 1.7rem;
-    grid-column-gap: 1.7rem;
-	}
 	.card {
 		@apply bg-primary-50 drop-shadow rounded overflow-auto;
 		.card-image-top {
-			width: 100%;
+			@apply w-full object-cover;
 			height: 20vh;
-			object-fit: cover;
 		}
 		.card-text {
 			@apply text-base;
@@ -21,7 +15,7 @@
 		.badge-primary {
 			background-color: var(--ghost-accent-color);
 			&:hover {
-				filter: brightness(0.8);
+				@apply brightness-75;
 			}
 		}
 		.card-author {
@@ -62,8 +56,7 @@
 			.card-image-container { 
 				min-height: 20vh;
 				background-image: url(/assets/images/bg-photo.png);
-				background-size: cover;
-				background-position: center;
+				@apply bg-cover bg-center;
 			}
 		}
 		.card-body {
@@ -91,7 +84,7 @@
 				@apply w-4 h-4;
 			}
 			&:hover {
-				filter: brightness(0.8);
+				@apply brightness-75;
 			}
 		}
 		.card-image-link {
@@ -103,13 +96,13 @@
 
 		}
 		.card-body {
+			@apply  p-4 pb-16;
 			.card-excerpt {
 				-webkit-line-clamp: 6;
 			}
 		}
 		.card-footer {
-			background: none;
-			border: none;
+			@apply bg-none border-0;
 			.card-author {
 				@apply w-10 h-10;
 				div {

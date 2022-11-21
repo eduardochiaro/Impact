@@ -1,5 +1,5 @@
 <article class="card {{post_class}}">
-	<div class="grid grid-cols-3 gap-1">
+	<div class="md:grid grid-cols-3 gap-4">
     {{#if feature_image}}
 		<div class="col-span-2 relative">
 			<a href="{{url}}" class="block card-image-link">
@@ -19,7 +19,7 @@
 				</a>
 		</div>
     {{/if}}			
-		<div class="col-span-1 relative mr-4">
+		<div class="relative">
 			<a href="{{url}}">
 				<div class="card-body">
 					<div class="flex flex-row-reverse">
@@ -33,7 +33,7 @@
 					<p class="card-text card-excerpt">{{excerpt characters="340"}}</p>				
 				</div>
 			</a>
-			<div class="card-footer">
+			<div class="card-footer px-4">
 				<div class="flex items-center">
 					<div class="flex-auto">
 						<p class="card-text pt-2"><small class="text-muted"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="mx-2"></span> {{reading_time}}</small></p>
