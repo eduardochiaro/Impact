@@ -682,9 +682,6 @@ video {
 .border {
   border-width: 1px;
 }
-.border-r {
-  border-right-width: 1px;
-}
 .border-primary-300 {
   --tw-border-opacity: 1;
   border-color: rgb(214 211 209 / var(--tw-border-opacity));
@@ -704,6 +701,10 @@ video {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -720,10 +721,6 @@ video {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -739,10 +736,6 @@ video {
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .pr-3 {
   padding-right: 0.75rem;
@@ -2218,12 +2211,12 @@ Ghost editor. */
     max-width: 42rem;
   }
 
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2246,13 +2239,9 @@ Ghost editor. */
     border-right-width: 1px;
   }
 
-  .md\:p-0 {
-    padding: 0px;
-  }
-
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   .md\:px-6 {
@@ -2268,19 +2257,6 @@ Ghost editor. */
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-  }
-
-  .md\:pb-20 {
-    padding-bottom: 5rem;
-  }
-
-  .md\:pt-5 {
-    padding-top: 1.25rem;
   }
 
   .md\:text-8xl {
@@ -2309,10 +2285,6 @@ Ghost editor. */
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .xl\:flex-row {
-    flex-direction: row;
-  }
-
   .xl\:border-r {
     border-right-width: 1px;
   }
@@ -2329,18 +2301,5 @@ Ghost editor. */
   .xl\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .xl\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .xl\:pb-20 {
-    padding-bottom: 5rem;
-  }
-
-  .xl\:pt-5 {
-    padding-top: 1.25rem;
   }
 }
