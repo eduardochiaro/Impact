@@ -1,9 +1,9 @@
-<article class="card post-card {{post_class}}">
+<article class="card post-card {{post_class}} relative">
 	<a href="{{url}}">
 		<div class="card-image-container">
 		{{#if primary_tag}}
 		{{#primary_tag}}
-		<span class="card-tag badge badge-primary px-3 py-2" style="background-color: {{accent_color}};">{{name}}</span>
+		<span class="card-tag badge absolute top-4 right-4" style="background-color: {{accent_color}};">{{name}}</span>
 		{{/primary_tag}}
 		{{/if}}
     {{#if feature_image}}
@@ -33,26 +33,23 @@
     {{/if}}
 		</div>
 		
-		<div class="card-body">
+		<div class="card-body px-4">
 			<h5 class="card-title mb-3">{{title}}</h5>
-			<p class="card-text  card-excerpt">{{excerpt characters="240"}}</p>
+			<p class="card-text card-excerpt">{{excerpt characters="240"}}</p>
 		</div>
 	</a>
-	<div class="card-footer">
-		<div class="row">
-			<div class="col-auto">
-				<p class="card-text"><small class="text-muted"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="mx-2"></span> {{reading_time}}</small></p>
+	<div class="card-footer px-4">
+		<div class="flex items-center">
+			<div class="flex-auto">
+				<p class="card-text pt-2"><small class="text-muted"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="mx-2"></span> {{reading_time}}</small></p>
 			</div>
-			<div class="col text-right reset-inline">
 				{{#if @custom.show_author}}
-        {{#foreach authors}}
-				<a href="{{url}}" class="card-author d-inline-block" data-toggle="tooltip" aria-label="{{name}}" title="Posted by {{name}}">
+				{{#foreach authors}}
+				<a href="{{url}}" class="card-author flex-none" data-toggle="tooltip" aria-label="{{name}}" title="Posted by {{name}}">
 					<div style="background-image: url({{img_url profile_image size="xs"}}?s=250&amp;d=mm&amp;r=x);"></div>
 				</a>
-        {{/foreach}}
+				{{/foreach}}
 				{{/if}}
-			</div>
 		</div>
-		
 	</div>
 </article>

@@ -10,54 +10,53 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/github-dark.min.css" integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings, it should always be the last tag before the closing head tag --}}
+
+	<link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}">
 	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
-	<section id="navigation">
-		<nav id="header" class="navbar navbar-expand-lg navbar-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="{{@site.url}}">
+	<section id="navigation" class="absolute top-0 left-0 z-10 w-full px-5 xl:p-0">
+		<nav id="header" class="bg-primary-50 rounded py-2 px-3 md:px-6 container mx-auto mt-5 drop-shadow ">
+			<div class="flex items-center gap-2">
+				<div class="block md:hidden icon mr-4" id="buttonShowMenu">{{>"icons/menu"}}</div>
+				<a class="font-header font-semibold text-xl" href="{{@site.url}}">
 					{{#if @site.logo}}
-							<img src="{{@site.logo}}" alt="{{@site.title}}" />
+						<img src="{{@site.logo}}" alt="{{@site.title}}" />
 					{{else}}
-							{{@site.title}}
+						{{@site.title}}
 					{{/if}}
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					{{navigation}}
-					<div id="navbarIcons" class="d-flex">
-						{{#if @site.facebook}}
-						<a href="{{facebook_url @site.facebook}}" class="icon mr-4">{{> "icons/facebook"}}</a>
-						{{/if}}
-						{{#if @site.twitter}}
-						<a href="{{twitter_url @site.twitter}}" class="icon mr-4">{{> "icons/twitter"}}</a>
-						{{/if}}
-						<a href="{{@site.url}}/rss/" class="icon mr-4">{{> "icons/rss"}}</a>
-
-						{{#if @custom.login_header_link}}
-							{{> "login-button"}}
-						{{/if}}
-					</div>
+				<div class="flex-auto">
+					<div class="hidden md:block">{{navigation}}</div>
+				</div>
+				<div id="navbarIcons" class="flex items-center gap-2 md:gap-6">
+					{{#if @site.facebook}}
+					<a href="{{facebook_url @site.facebook}}" class="icon">{{> "icons/facebook"}}</a>
+					{{/if}}
+					{{#if @site.twitter}}
+					<a href="{{twitter_url @site.twitter}}" class="icon">{{> "icons/twitter"}}</a>
+					{{/if}}
+					<a href="{{@site.url}}/rss/" class="icon">{{> "icons/rss"}}</a>
+					{{#if @custom.login_header_link}}
+						{{> "login-button"}}
+					{{/if}}
 				</div>
 			</div>
 		</nav>
+		<div class="hidden bg-primary-50 rounded py-2 px-3 md:px-6 container mx-auto mt-5 drop-shadow z-50" id="navbarResponsive">
+			{{navigation}}
+		</div>
 	</section>
-	<section id="main" class="container-fluid">
+	<section id="main">
 		{{{body}}}
 	</section>
 	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					{{navigation type="secondary"}}
-				</div>
-				<div class="col text-right">
+		<div class="container max-w-xs md:max-w-6xl mx-auto px-10 xl:px-0">
+			<div class="grid grid-cols-2">
+				{{navigation type="secondary"}}
+				<div class="text-right">
 					<section class="copyright pr-3 mt-2"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
 					<section class="powered pl-2 mt-2">Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a></section>
 				</div>
@@ -67,9 +66,7 @@
 
 	{{@config.lazyload}}
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js" integrity="sha512-W7EehcwtSbRF63FIQlXEOOd5mnq0Et0V0nUOvwcUvjnCKgOLLYbqriQxEQSp63sfrkryxIg/A/O8v8O18QwQCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 	<script src="{{asset "built/main.js"}}"></script>
 
 	{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}

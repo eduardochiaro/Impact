@@ -1,5 +1,7 @@
-;(function( $ ){
-  $('[data-toggle="tooltip"]').tooltip();
+(function( $ ){
+  $('#buttonShowMenu').on('click', function() {
+    $('#navbarResponsive').toggle();
+  });
 })( window.jQuery );
 /* eslint-env browser */
 
@@ -26,7 +28,7 @@ const useLazy = false;
 	}
 
 	// post feed element
-	var feedElement = document.querySelector('.grid');
+	var feedElement = document.querySelector('.feed');
 	if (!feedElement) {
 		return;
 	}
@@ -49,6 +51,7 @@ const useLazy = false;
 
 		// append contents
 		var postElements = this.response.querySelectorAll('article.post-card');
+		console.log(postElements.length);
 		postElements.forEach(function (item) {
 			// document.importNode is important, without it the item's owner
 			// document will be different which can break resizing of

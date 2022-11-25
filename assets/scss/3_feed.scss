@@ -1,84 +1,31 @@
-@import "./components/variables.scss";
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-
 #feed,
 #featured,
 #more {
-	.grid {
-		display: grid;
-    grid-row-gap: 1.7rem;
-    grid-column-gap: 1.7rem;
-		@include media-breakpoint-down(xs) {
-			grid-template-columns: 1fr;
-			grid-gap: 0rem;
-		}
-		@include media-breakpoint-only(sm) {
-			grid-template-columns: 1fr 1fr;
-		}
-		@include media-breakpoint-up(md) {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-	}
 	.card {
-		//min-height: 350px;
-		overflow: auto;
-		border-radius: 0.3rem;
-		@include media-breakpoint-down(xs) {
-			border-radius: 0;
-			border-top: 3px solid var(--ghost-accent-color) ;
-		}
-		@include media-breakpoint-up(sm) {
-			transition: all .2s ease-in-out;
-			&:hover {
-				box-shadow: 0 18px 32px -18px $darkgrey;
-				-webkit-transform: translateY(-0.5rem);
-				transform: translateY(-0.5rem);
-			}
-		}
+		@apply bg-primary-50 drop-shadow rounded overflow-auto;
 		.card-image-top {
-			width: 100%;
+			@apply w-full object-cover;
 			height: 20vh;
-			object-fit: cover;
 		}
 		.card-text {
-			font-size: 1rem;
+			@apply text-base;
 		}
 		.badge-primary {
 			background-color: var(--ghost-accent-color);
 			&:hover {
-				filter: brightness(0.8);
-			}
-		}
-		a {
-			color: $darkgrey;
-			&:hover {
-				text-decoration: none;
-				color: $darkgrey;
+				@apply brightness-75;
 			}
 		}
 		.card-author {
-			width: 25px;
-			height: 25px;
-			margin: 0 -6px;
-			overflow: hidden;
-			position: relative;
+			@apply w-6 h-6 overflow-hidden relative; 
 			div {
-				width: 100%;
-				height: 100%;
-				background-color: $white;
-				background-repeat: no-repeat;
-				background-position: 50%;
-				background-size: cover;
-				border-radius: 50%;
-				border: 1px solid $white;
+				@apply w-full h-full bg-primary-50 bg-no-repeat bg-cover rounded-full border border-primary-300;
 			}
 			&:hover {
-				z-index: 11 !important;
+				@apply z-20;
 			}
 			&:first-child {
-				z-index: 10;
+				@apply z-10;
 			}
 
 			&:nth-child(2) {
@@ -98,31 +45,20 @@
 			}
 		}
 		.card-footer {
-			font-family: $header-font;
-			font-weight: 500;
+			@apply font-header;
 			span {
-				border-right: 1px solid #c5d2d9;
+				@apply border border-r border-primary-300;
 			}
-		}
-		.badge {
-			font-family: $header-font;
-			text-transform: uppercase;
-			font-size: 0.9rem;
-			position: absolute;
-			letter-spacing: 0.1rem;
-			right: 1rem;
-			top: 1rem;
 		}
 		&.no-image {
 			.card-image-container { 
 				min-height: 20vh;
 				background-image: url(/assets/images/bg-photo.png);
-				background-size: cover;
-				background-position: center;
+				@apply bg-cover bg-center;
 			}
 		}
 		.card-body {
-			padding-bottom: 5rem;
+			@apply leading-6 pt-4 pb-12;
 			.card-excerpt {
 				display: -webkit-box;
 				overflow-y: hidden;
@@ -132,72 +68,42 @@
 			}
 		}
 		.card-footer {
-			background: none;
-			border: none;
-
-			position: absolute;
-			width: 100%;
-			bottom: 0;
-			left: 0;
+			@apply absolute w-full bottom-4 left-0;
 		}
 	}
 }
 
 #featured {
-
-	@include media-breakpoint-down(md) {
-		margin-top: -2rem;
-	}
-	@include media-breakpoint-only(lg) {
-		margin-top: -4rem;
-	}
-	@include media-breakpoint-up(xl) {
-		margin-top: -5rem;
-	}
 	.card {
-		z-index: 20;
-		.badge.tag-featured {
-			z-index: 3;
-			left: 1rem;
-			right: auto;
+		@apply bg-primary-100 rounded z-20 mb-10 drop-shadow border-2 border-primary-50;
+		.tag-featured {
+			@apply z-10 left-4 right-auto bg-amber-400 text-primary-800; 
 			svg {
-				width: 1rem;
-				height: 1rem;
+				@apply w-4 h-4;
 			}
 			&:hover {
-				filter: brightness(0.8);
+				@apply brightness-75;
 			}
 		}
 		.card-image-link {
-			position: relative;
-			min-height: 380px;
-			height: 100%;
-			@include media-breakpoint-down(md) {
-				min-height: 20vmax;
-			}
+			@apply relative h-full;
 		}
 		.card-image-top {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			@include media-breakpoint-down(md) {
-				height: 20vmax;
-			}
+			@apply md:absolute w-full h-full rounded;
+
 		}
 		.card-body {
+			@apply  p-4 pb-16;
 			.card-excerpt {
 				-webkit-line-clamp: 6;
 			}
 		}
 		.card-footer {
-			background: none;
-			border: none;
+			@apply bg-none border-0;
 			.card-author {
-				width: 45px;
-				height: 45px;
-				margin: 0 -9px;
+				@apply w-10 h-10;
 				div {
-					border-width: 2px;	
+					@apply border-2;
 				}
 			}
 		}
@@ -205,5 +111,5 @@
 }
 
 #pagination { 
-	text-align: center;
+	@apply text-center;
 }

@@ -1,16 +1,16 @@
 {{!< default}}
 
-<section id="author"  class="container">
-	<div class="row">
-		<div class="col-auto pt-2">
+<section id="author">
+	<div class="container max-w-6xl mx-auto relative px-6 xl:px-0 py-10 md:py-5 md:flex gap-6">
+		<div class="flex-1">
 			{{#author}}
-			<div class="card author-card mt-3">
+			<div class="bg-primary-50 md:w-52 rounded author-card mb-6 mx-auto">
 				{{#if profile_image}}
 				<img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
 				{{else}}
 				<span class="author-profile-pic">{{> "icons/avatar"}}</span>
 				{{/if}}
-				<h1 class="mt-4">{{name}}</h1>
+				<h1 class="my-4">{{name}}</h1>
 				<p>
 				{{#if bio}}
 					{{bio}}
@@ -19,20 +19,20 @@
 				{{/if}}
 				</p>
 
-				<div class="author-profile-meta">
+				<div class="author-profile-meta my-4">
 					{{#if location}}
 					<div class="author-profile-location">📍 {{location}}</div>
 					{{/if}}
-					<div class="author-icons mt-2">
-					{{#if website}}
-					<a class="icon d-inline-block mr-2" href="{{website}}" target="_blank" rel="noopener">{{> "icons/website"}}</a>
-					{{/if}}
-					{{#if twitter}}
-					<a class="icon d-inline-block mr-2" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-					{{/if}}
-					{{#if facebook}}
-					<a class="icon d-inline-block" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-					{{/if}}
+					<div class="author-icons flex items-center gap-2">
+						{{#if website}}
+						<a class="icon" href="{{website}}" target="_blank" rel="noopener">{{> "icons/website"}}</a>
+						{{/if}}
+						{{#if twitter}}
+						<a class="icon" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+						{{/if}}
+						{{#if facebook}}
+						<a class="icon" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+						{{/if}}
 					</div>
 				</div>
 
@@ -40,13 +40,11 @@
 			{{/author}}
 		</div>
 
-		<div class="col">
-			<div id="feed" class="post-feed pt-3">
-				<div class="grid">
-				{{#foreach posts}}
-					{{> "post-card"}}
-				{{/foreach}}
-				</div>
+		<div id="feed" class="post-feed">
+			<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+			{{#foreach posts}}
+				{{> "post-card"}}
+			{{/foreach}}
 			</div>
 		</div>
 	</div>

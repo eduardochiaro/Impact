@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=5.0.0"
@@ -22,37 +22,36 @@
       "Blog"
     ]
   },
+  "card_assets": true,
   "keywords": [
     "ghost",
     "theme",
     "ghost-theme"
   ],
   "devDependencies": {
-    "@tryghost/release-utils": "^0.7.1",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.13",
     "beeper": "^3.0.0",
-    "bootstrap": "^4.6.0",
-    "browser-sync": "^2.27.7",
+    "browser-sync": "^2.27.10",
     "connect-livereload": "^0.6.1",
-    "cssnano": "^5.1.7",
-    "gscan": "^4.27.0",
+    "cssnano": "^5.1.14",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-noop": "^1.0.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "handlebars": "^4.7.7",
-    "jquery": "^3.6.0",
+    "jquery": "^3.6.1",
     "livereload": "^0.9.3",
-    "minimist": "^1.2.6",
-    "node-sass": "^7.0.1",
+    "minimist": "^1.2.7",
+    "node-sass": "^8.0.0",
     "open": "^8.4.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.19",
     "postcss-color-mod-function": "^3.0.3",
     "pump": "^3.0.0",
-    "sass": "^1.50.1"
+    "sass": "^1.56.1",
+    "tailwindcss": "^3.2.4"
   },
   "config": {
     "posts_per_page": 9,

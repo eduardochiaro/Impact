@@ -1,5 +1,11 @@
 {{#unless @member}}
-	<a class="btn p-0" href="#/portal/account">Login</a>
+	<a class="btn p-0 flex items-center gap-2" alt="Login" href="#/portal/account">
+		<span class="icon border border-accent rounded-full md:hidden">{{>"icons/avatar"}}</span>
+		<span class="hidden md:block">Login</span>
+	</a>
 {{else}}
-	<a class="btn p-0" href="#/portal/account">Account</a>
+	<a class="btn p-0 flex items-center gap-2" alt="Account" href="#/portal/account">
+		<span class="icon border border-accent rounded-full md:hidden">{{>"icons/avatar"}}</span>
+		<span class="hidden md:block">Account</span>
+	</a>
 {{/unless}}

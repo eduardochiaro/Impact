@@ -1,3 +1,5 @@
-;(function( $ ){
-  $('[data-toggle="tooltip"]').tooltip();
+(function( $ ){
+  $('#buttonShowMenu').on('click', function() {
+    $('#navbarResponsive').toggle();
+  });
 })( window.jQuery );
