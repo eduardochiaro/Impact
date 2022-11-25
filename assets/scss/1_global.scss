@@ -48,3 +48,17 @@ h1, h2, h3, h4, h5 {
 	@apply rounded uppercase font-header text-xs tracking-wider font-bold text-primary-50 px-3 py-2 ;
 	background-color: var(--ghost-accent-color); 
 }
+
+.border-accent{
+	border-color: var(--ghost-accent-color) !important;
+}
+
+.icon {
+	svg {
+		fill: var(--ghost-accent-color);
+		color: var(--ghost-accent-color);
+		&:hover {
+			@apply brightness-75;
+		}
+	}
+}

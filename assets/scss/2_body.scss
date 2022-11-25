@@ -2,15 +2,6 @@ body {
 	> #navigation {
 
 		#header {
-			.nav-item {
-				@apply border-r border-primary-300 last:border-r-0 uppercase tracking-widest text-sm font-header text-primary-500;
-				.nav-link {
-					@apply py-0 my-2 px-8;
-				}
-				&.active {
-					@apply text-primary-900;
-				}
-			}
 			#navbarIcons {
 				@apply font-header;
 				.icon {

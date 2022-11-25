@@ -87,10 +87,9 @@
 		}
 		.card-image-link {
 			@apply relative h-full;
-			min-height: 380px;
 		}
 		.card-image-top {
-			@apply absolute w-full h-full rounded;
+			@apply md:absolute w-full h-full rounded;
 
 		}
 		.card-body {

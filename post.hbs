@@ -38,7 +38,7 @@
 				<div class="article-byline">
 					<section class="article-byline-content">
 						{{#if @custom.show_author}}
-						<div class="flex items-center author-list gap-6">
+						<div class="flex items-center author-list gap-2 md:gap-6">
 							<div class="authors">
 							{{#foreach authors}}
 								{{#if profile_image}}
@@ -50,18 +50,18 @@
 								{{/if}}
 							{{/foreach}}
 							</div>
-							<div class="article-byline-meta grid grid-flow-row gap-4">
-								<h4 class="author-name md:text-xl tracking-widest">{{authors}}</h4>
-								<div class="byline-meta-content">
+							<div class="article-byline-meta grid grid-flow-row gap-1 md:gap-4">
+								<h4 class="author-name text-sm md:text-xl tracking-widest">{{authors}}</h4>
+								<div class="byline-meta-content text-xs md:text-base">
 										<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
 										<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
 								</div>
 							</div>
 						</div>
 						{{else}}
-						<div class="row author-list">
-							<div class="col article-byline-meta">
-									<div class="byline-meta-content">
+						<div class="rauthor-list">
+							<div class="article-byline-meta">
+									<div class="byline-meta-content text-xs md:text-base">
 											<time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
 											<span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
 									</div>
