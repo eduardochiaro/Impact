@@ -1,13 +1,8 @@
 {{!< default}}
-
 {{#tag}}
-
 <section id="tagged" class="tag{{#unless feature_image}} bg-primary-50 no-image{{/unless}}">
-
 	<header class="article-header">
-
 		<div class="max-w-screen bg-slate-500 rounded-lg py-12 text-left">
-
 		{{#if feature_image}}
 			<figure class="article-image">
 				<img class="site-header-cover"
@@ -36,13 +31,13 @@
 
 {{/tag}}
 
-	<div class="container max-w-6xl mx-auto relative px-5 md:px-0 py-6 md:py-20">
+	<section class="container max-w-6xl mx-auto relative px-6 xl:px-0 py-10 md:py-20">
 		<div id="feed" class="post-feed pt-3">
-			<div class="grid md:grid-cols-3 gap-6">
+			<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 			{{#foreach posts}}
 				{{> "post-card"}}
 			{{/foreach}}
 			</div>
 		</div>
-	</div>
+	</section>
 </div>

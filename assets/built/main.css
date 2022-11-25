@@ -716,6 +716,10 @@ video {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -731,10 +735,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 .py-0 {
   padding-top: 0px;
@@ -2222,6 +2222,10 @@ Ghost editor. */
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -2266,6 +2270,11 @@ Ghost editor. */
     padding-right: 2rem;
   }
 
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .md\:pb-20 {
     padding-bottom: 5rem;
   }
@@ -2292,5 +2301,46 @@ Ghost editor. */
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .xl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:border-r {
+    border-right-width: 1px;
+  }
+
+  .xl\:p-0 {
+    padding: 0px;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .xl\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .xl\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .xl\:pt-5 {
+    padding-top: 1.25rem;
   }
 }

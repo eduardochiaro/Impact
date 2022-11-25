@@ -1,8 +1,8 @@
 {{#if isSecondary}}
-<ul class="flex items-center">
+<ul class="flex items-center gap-4">
   {{#foreach navigation}}
-	<li class="border-r border-primary-300 last:border-r-0 uppercase tracking-widest text-sm font-header text-primary-500 nav-{{slug}}">
-		<a href="{{url}}" class="py-0 my-2 px-8">{{label}}</a>
+	<li class="xl:border-r border-primary-300 last:border-r-0 uppercase tracking-widest text-sm font-header text-primary-500 nav-{{slug}}">
+		<a href="{{url}}" class="py-0 my-2 xl:px-8">{{label}}</a>
 	</li>
 	{{/foreach}}
 </ul>
