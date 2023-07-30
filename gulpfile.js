@@ -17,7 +17,7 @@ const config = {
 };
 
 //compile scss into css
-function css() {
+gulp.task('css', function() {
   const tailwindcss = require('tailwindcss'); 
   return gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -33,19 +33,19 @@ function css() {
     .pipe(gulp.dest('./assets/built'))
 		//.pipe(size()) 
     .pipe(browserSync.stream());
-}
+});
 
 //compile jss into one file
-function js() {
+gulp.task('js', function() {
   return gulp.src('./assets/js/*.js')
 		.pipe(concat('main.js'))
 		.pipe(config.production ? uglify() : noop())
     .pipe(gulp.dest('./assets/built'))
 		//.pipe(size()) 
     .pipe(browserSync.stream());
-}
+});
 
-function design() {
+gulp.task('designCode', function() {
 	browserSync.init({
 		server: {
 			baseDir: "./designs",
@@ -56,9 +56,9 @@ function design() {
 		}
 	});
 	gulp.watch('./designs/*.html').on('change', browserSync.reload);
-}
+});
 
-function zipper(done) {
+gulp.task('zipper', function() {
 	const filename = require('./package.json').name + '.zip';
 	return gulp.src([
 					'**',
@@ -69,17 +69,15 @@ function zipper(done) {
 			])
 			.pipe(zip(filename))
 			.pipe(gulp.dest('dist/'));
-}
+});
 
-const hbsWatcher = () => gulp.watch('./**/*.hbs', css);
-const cssWatcher = () => gulp.watch('./assets/scss/**', css);
-const jsWatcher = () => gulp.watch('./assets/js/**/*.js', js);
+gulp.task('build', ['css', 'js']);
 
-const watcher = gulp.parallel(cssWatcher, jsWatcher, hbsWatcher);
-const designW = gulp.parallel(cssWatcher, jsWatcher, design);
-const build = gulp.series(css, js);
+gulp.task('default', ['build'], function() {
+  gulp.watch('./assets/scss/**', ['css']);
+  gulp.watch('./assets/js/**/*.js', ['js']);
+	gulp.watch('./**/*.hbs', ['css']);
+});
 
-exports.style = css;
-exports.default = gulp.series(build, watcher);
-exports.design = gulp.series(build, designW);
-exports.zip = gulp.series(build, zipper);
+exports.design = gulp.task('design', ['build', 'designCode']);
+exports.zip = gulp.task('zip', ['build', 'zipper']);
