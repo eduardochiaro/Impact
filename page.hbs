@@ -4,6 +4,7 @@
 
 <article id="article" class="article bg-primary-50 {{post_class}}">
 
+  {{#match @page.show_title_and_feature_image}}
 	<header class="article-header">
 
 		<div class="max-w-screen bg-slate-500 rounded-lg py-12 text-left">
@@ -29,6 +30,7 @@
 			</div>
 		</div>
 	</header>
+  {{/match}}
 
 	<section class="article-content container max-w-6xl mx-auto relative px-6 xl:px-0 py-10 md:py-20">
     {{content}}
