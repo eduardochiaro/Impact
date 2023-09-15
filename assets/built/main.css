@@ -657,8 +657,8 @@ video {
 .grid-flow-row {
   grid-auto-flow: row;
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -671,6 +671,9 @@ video {
 }
 .items-center {
   align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -714,9 +717,9 @@ video {
 .p-0 {
   padding: 0px;
 }
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -1117,6 +1120,21 @@ body > #footer .copyright {
   border-right-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(214 211 209 / var(--tw-border-opacity));
+}
+#feed .card .card-footer .card-text,
+#featured .card .card-footer .card-text,
+#more .card .card-footer .card-text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+@media (min-width: 768px) {
+
+  #feed .card .card-footer .card-text,
+#featured .card .card-footer .card-text,
+#more .card .card-footer .card-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 #feed .card.no-image .card-image-container,
 #featured .card.no-image .card-image-container,
@@ -2256,6 +2274,11 @@ Ghost editor. */
     border-right-width: 1px;
   }
 
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2289,6 +2312,11 @@ Ghost editor. */
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .md\:text-xl {

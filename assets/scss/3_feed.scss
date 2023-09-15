@@ -49,6 +49,9 @@
 			span {
 				@apply border border-r border-primary-300;
 			}
+			.card-text {
+				@apply text-lg md:text-base;
+			}
 		}
 		&.no-image {
 			.card-image-container { 

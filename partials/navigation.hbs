@@ -1,7 +1,7 @@
 {{#if isSecondary}}
-<ul class="flex items-center gap-4">
+<ul class="flex justify-between items-center gap-4">
   {{#foreach navigation}}
-	<li class="xl:border-r border-primary-300 last:border-r-0 uppercase tracking-widest text-sm font-header text-primary-500 nav-{{slug}}">
+	<li class="xl:border-r border-primary-300 last:border-r-0 uppercase tracking-widest text-xs md:text-sm font-header text-primary-500 nav-{{slug}}">
 		<a href="{{url}}" class="py-0 my-2 xl:px-8">{{label}}</a>
 	</li>
 	{{/foreach}}
@@ -9,7 +9,7 @@
 {{else}}
 <ul class="flex md:items-center flex-col md:flex-row w-min md:w-full">
   {{#foreach navigation}}
-	<li class="md:border-r border-primary-300 my-2 md:my-0 last:border-r-0 uppercase tracking-widest text-sm font-header text-primary-500 nav-{{slug}}{{#if current}} text-primary-900 font-semibold {{/if}}">
+	<li class="md:border-r border-primary-300 my-2 md:my-0 last:border-r-0 uppercase tracking-widest text-xs md:text-sm font-header text-primary-500 nav-{{slug}}{{#if current}} text-primary-900 font-semibold {{/if}}">
 		<a class="py-0 my-2 md:px-8" href="{{url absolute="true"}}">{{label}}
 		{{#if current}}<span class="sr-only">(current)</span>{{/if}}
 		</a>
