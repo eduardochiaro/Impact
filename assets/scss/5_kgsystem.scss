@@ -181,7 +181,7 @@ Ghost editor. */
 		min-width: 33%;
 		@apply relative flex-grow;
 		img {
-			@apply w-full h-full object-cover absolute top-0 left-0 rounded-l rounded-b;
+			@apply w-full h-full object-cover absolute top-0 left-0 rounded-r;
 		}
 	}
 }
