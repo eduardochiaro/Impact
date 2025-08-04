@@ -1,9 +1,9 @@
 {
   "name": "impact",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "Ghost blogging theme",
   "engines": {
-    "ghost": ">=5.0.0"
+    "ghost": ">=6.0.0"
   },
   "license": "MIT",
   "author": {
@@ -22,7 +22,6 @@
       "Blog"
     ]
   },
-  "card_assets": true,
   "keywords": [
     "ghost",
     "theme",
@@ -31,7 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "beeper": "^3.0.0",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.4",
     "connect-livereload": "^0.6.1",
     "cssnano": "^6.0.1",
     "gulp": "github:electric-eloquence/gulp",
@@ -48,7 +47,7 @@
     "node-sass": "^9.0.0",
     "open": "^9.1.0",
     "postcss": "^8.4.31",
-    "postcss-color-mod-function": "^3.0.3",
+    "postcss-color-mod-function": "^4.1.1",
     "pump": "^3.0.0",
     "sass": "^1.69.0",
     "tailwindcss": "^3.3.3"

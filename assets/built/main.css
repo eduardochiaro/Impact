@@ -797,7 +797,7 @@ video {
   text-align: right;
 }
 .font-header {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
 }
 .text-4xl {
   font-size: 2.25rem;
@@ -846,7 +846,7 @@ video {
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(214 211 209 / var(--tw-bg-opacity));
-  font-family: Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-body), Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
@@ -859,7 +859,7 @@ body.home-templatem, body.author-template {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -918,7 +918,7 @@ h1, h2, h3, h4, h5 {
   padding-right: 0.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 700;
@@ -942,7 +942,7 @@ h1, h2, h3, h4, h5 {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 body > #navigation #header #navbarIcons {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
 }
 body > #navigation #header #navbarIcons .icon {
   height: 1.5rem;
@@ -999,7 +999,7 @@ body > #footer {
   background-color: rgb(68 64 60 / var(--tw-bg-opacity));
   padding-top: 2.5rem;
   padding-bottom: 6rem;
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -1111,7 +1111,7 @@ body > #footer .copyright {
 #feed .card .card-footer,
 #featured .card .card-footer,
 #more .card .card-footer {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
 }
 #feed .card .card-footer span,
 #featured .card .card-footer span,
@@ -1351,7 +1351,7 @@ body > #footer .copyright {
 }
 .article .article-header .article-header-content .article-byline,
 #tagged .article-header .article-header-content .article-byline {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
 }
 .article .article-header .article-header-content .article-byline .author-list,
 #tagged .article-header .article-header-content .article-byline .author-list {
@@ -1496,7 +1496,7 @@ body > #footer .copyright {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   vertical-align: middle;
-  font-family: Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-body), Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1rem;
@@ -1520,7 +1520,7 @@ body > #footer .copyright {
   padding-right: 0.5rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
-  font-family: Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-body), Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -1718,7 +1718,7 @@ body > #footer .copyright {
   padding-top: 1.5rem;
   padding-left: 1.5rem;
   text-align: center;
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
@@ -1800,7 +1800,7 @@ Ghost editor. */
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 244 / var(--tw-bg-opacity));
-  font-family: Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-body), Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-weight: 400;
   --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1809,7 +1809,7 @@ Ghost editor. */
   padding: 1.25rem;
 }
 .article .kg-bookmark-title {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -1828,7 +1828,7 @@ Ghost editor. */
   color: rgb(120 113 108 / var(--tw-text-opacity));
 }
 .article .kg-bookmark-metadata > span:nth-of-type(2) {
-  font-family: Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-body), Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
@@ -2168,7 +2168,7 @@ Ghost editor. */
   padding: 1rem;
 }
 #author .author-card h1 {
-  font-family: Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
+  font-family: var(--gh-font-heading), Raleway, Open Sans, -apple-system, sans-serif, Helvetica Neue;
   font-size: 1.25rem;
   line-height: 1.5rem;
   letter-spacing: 0.1em;

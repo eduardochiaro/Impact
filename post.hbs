@@ -97,7 +97,7 @@
 						<p class="card-text">{{description}}</p>
 
 						<span class="btn btn-light w-full">
-						{{#get "posts" filter="tag:{{slug}}" limit="all" as |all_in_tags pages|}}
+						{{#get "posts" filter="tag:{{slug}}" limit="100" as |all_in_tags pages|}}
 							{{pages.total}} {{plural pages.total empty="" singular="article" plural="articles"}} &raquo;
 						{{/get}}
 						</span>
@@ -116,5 +116,4 @@
 	</aside>
 </section>
 {{/if}}
-
 {{/post}}

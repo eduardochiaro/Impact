@@ -12,8 +12,8 @@ module.exports = {
       primary: colors.stone
     },
     fontFamily: {
-      normal: ['Open Sans', '-apple-system', 'sans-serif', 'Helvetica Neue'],
-      header: ['Raleway', 'Open Sans', '-apple-system',  'sans-serif', 'Helvetica Neue'],
+      normal: ['var(--gh-font-body)', 'Open Sans', '-apple-system', 'sans-serif', 'Helvetica Neue'],
+      header: ['var(--gh-font-heading)', 'Raleway', 'Open Sans', '-apple-system',  'sans-serif', 'Helvetica Neue'],
     },
     extend: {},
   },
