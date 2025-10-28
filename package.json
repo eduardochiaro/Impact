@@ -1,6 +1,6 @@
 {
   "name": "impact",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "description": "Ghost blogging theme",
   "engines": {
     "ghost": ">=6.0.0"

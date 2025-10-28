@@ -103,11 +103,22 @@
 			@apply mx-auto w-full;
 		}
 		& > blockquote {
-			@apply relative italic p-0; 
+			@apply relative italic p-0 mb-4; 
 			&:before {
 				content: "";
 				@apply absolute -left-6 top-0 bottom-0 w-1;
 				background: var(--ghost-accent-color);
+			}
+			&.kg-blockquote-alt {
+				&:before {
+					background: transparent;
+				}
+			}
+		}
+		ul {
+			@apply list-disc pl-6 mb-6;
+			li {
+				@apply mb-2;
 			}
 		}
 
