@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
 	@apply font-normal text-primary-900 text-base leading-4 bg-primary-300;
 	&.home-templatem,

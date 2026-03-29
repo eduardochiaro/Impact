@@ -5,7 +5,8 @@ const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
 var noop = require("gulp-noop");
 const argv = require('minimist')(process.argv.slice(2));
-const zip = require('gulp-zip');
+const zip = require('gulp-zip').default || require('gulp-zip');
+const { Transform } = require('stream');
 
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer');
@@ -16,19 +17,31 @@ const config = {
 	production: !!argv.production
 };
 
+// Prepend text to vinyl file contents
+function prepend(text) {
+  return new Transform({
+    objectMode: true,
+    transform(file, enc, cb) {
+      if (file.isBuffer()) {
+        file.contents = Buffer.concat([Buffer.from(text), file.contents]);
+      }
+      cb(null, file);
+    }
+  });
+}
+
 //compile scss into css
 gulp.task('css', function() {
-  const tailwindcss = require('tailwindcss'); 
+  const tailwindcss = require('@tailwindcss/postcss'); 
   return gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(concat('main.css'))
+		.pipe(prepend('@import "tailwindcss";\n@config "../../tailwind.config.js";\n'))
 		.pipe(config.production ? postcss([
-      tailwindcss("./tailwind.config.js"),
-			autoprefixer(),
+      tailwindcss(),
 			cssnano()
 		]) : postcss([
-      tailwindcss("./tailwind.config.js"),
-			autoprefixer()
+      tailwindcss(),
 		]))
     .pipe(gulp.dest('./assets/built'))
 		//.pipe(size()) 
@@ -61,23 +74,23 @@ gulp.task('designCode', function() {
 gulp.task('zipper', function() {
 	const filename = require('./package.json').name + '.zip';
 	return gulp.src([
-					'**',
-					'!node_modules', '!node_modules/**',
-					'!designs', '!designs/**',
-					'!dist', '!dist/**',
-					'!yarn-error.log'
-			])
+					'./**',
+					'!./node_modules/**',
+					'!./designs/**',
+					'!./dist/**',
+					'!./yarn-error.log'
+			], { follow: false, dot: false })
 			.pipe(zip(filename))
 			.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', ['css', 'js']);
+gulp.task('build', gulp.series('css', 'js'));
 
-gulp.task('default', ['build'], function() {
-  gulp.watch('./assets/scss/**', ['css']);
-  gulp.watch('./assets/js/**/*.js', ['js']);
-	gulp.watch('./**/*.hbs', ['css']);
-});
+gulp.task('default', gulp.series('build', function() {
+  gulp.watch('./assets/scss/**', gulp.series('css'));
+  gulp.watch('./assets/js/**/*.js', gulp.series('js'));
+	gulp.watch('./**/*.hbs', gulp.series('css'));
+}));
 
-exports.design = gulp.task('design', ['build', 'designCode']);
-exports.zip = gulp.task('zip', ['build', 'zipper']);
+exports.design = gulp.task('design', gulp.series('build', 'designCode'));
+exports.zip = gulp.task('zip', gulp.series('build', 'zipper'));
