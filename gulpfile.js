@@ -74,12 +74,15 @@ gulp.task('designCode', function() {
 gulp.task('zipper', function() {
 	const filename = require('./package.json').name + '.zip';
 	return gulp.src([
-					'./**',
-					'!./node_modules/**',
-					'!./designs/**',
-					'!./dist/**',
-					'!./yarn-error.log'
-			], { follow: false, dot: false })
+					'*.hbs',
+					'*.json',
+					'LICENSE',
+					'assets/built/**',
+					'assets/fonts/**',
+					'assets/images/**',
+					'assets/js/**',
+					'partials/**'
+			], { base: '.', encoding: false, allowEmpty: true })
 			.pipe(zip(filename))
 			.pipe(gulp.dest('dist/'));
 });
